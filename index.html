@@ -1012,7 +1012,7 @@
                 <span class="badge">🚀 Dịch vụ uy tín #1</span>
                 <h1>Nâng cấp <span class="highlight">Claude Team</span><br>Chính chủ tài khoản</h1>
                 <p class="subtitle">Giải pháp tối ưu để nâng cấp tài khoản Gmail cá nhân lên gói Claude Code Team với chi phí tiết kiệm nhất</p>
-                <a href="#payment" class="cta-button">Đăng ký ngay - Chỉ $12/tháng</a>
+<a href="#contact" class="cta-button">Đăng ký ngay - Chỉ $12/tháng</a>
                 
                 <div class="stats">
                     <div class="stat-item">
@@ -1303,50 +1303,6 @@
         </div>
     </section>
 
-    <!-- QR Payment Section -->
-    <section id="payment">
-        <div class="container">
-            <div class="section-title">
-                <h2>Thanh toán ngay</h2>
-                <p>Quét mã QR hoặc chuyển khoản theo thông tin bên dưới</p>
-            </div>
-            
-            <div class="qr-wrapper">
-                <div class="qr-info">
-                    <h2>Hướng dẫn thanh toán</h2>
-                    <p>Sau khi thanh toán, gửi ảnh biên lai kèm email Gmail qua Messenger để được mời tham gia Team trong vòng 24h.</p>
-                    
-                    <div class="qr-steps">
-                        <div class="qr-step">
-                            <div class="qr-step-icon">1</div>
-                            <div>Quét mã QR hoặc chuyển khoản thủ công</div>
-                        </div>
-                        <div class="qr-step">
-                            <div class="qr-step-icon">2</div>
-                            <div>Nội dung CK: <strong>CLAUDE [Email Gmail của bạn]</strong></div>
-                        </div>
-                        <div class="qr-step">
-                            <div class="qr-step-icon">3</div>
-                            <div>Gửi ảnh biên lai qua <strong>Messenger</strong> để được xác nhận</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="qr-card">
-                    <img src="https://img.vietqr.io/image/MB-047365-compact2.png?amount=315000&addInfo=CLAUDE%20EMAIL&accountName=DO%20HOAI%20NAM" alt="QR Code thanh toán" id="qrImage">
-                    
-                    <div class="bank-info">
-                        <p><strong>Ngân hàng:</strong> MB Bank</p>
-                        <p><strong>Số tài khoản:</strong> 047365</p>
-                        <p><strong>Chủ tài khoản:</strong> DO HOAI NAM</p>
-                        <p><strong>Số tiền:</strong> <span id="bankAmount">315.000đ ($12)</span></p>
-                        <p><strong>Nội dung:</strong> CLAUDE [Email của bạn]</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact-bg">
         <div class="container">
@@ -1518,7 +1474,6 @@
             const resultPrice = document.getElementById('resultPrice');
             const resultNote = document.getElementById('resultNote');
             const discountBadge = document.getElementById('discountBadge');
-            const bankAmount = document.getElementById('bankAmount');
             
             if (!dateInput.value) {
                 resultPrice.textContent = '$12';
@@ -1539,23 +1494,12 @@
                 resultPrice.textContent = '$6';
                 resultNote.textContent = `Ngày ${day} → Bỏ lỡ ${15 - day + (day > 0 ? 0 : 15)} ngày của chu kỳ trước`;
                 discountBadge.innerHTML = '<span class="discount-badge">-50% Giảm giá vì thiệt ngày</span>';
-                
-                updateQRCode(157500);
-                if (bankAmount) bankAmount.textContent = '157.500đ ($6)';
             } else {
                 // Ngày 15-31: Giá đầy đủ vì được dùng đủ 1 tháng
                 resultPrice.textContent = '$12';
                 resultNote.textContent = `Ngày ${day} → Đủ 1 tháng (15/${selectedDate.getMonth() + 1} → 15/${selectedDate.getMonth() + 2})`;
                 discountBadge.innerHTML = '<span class="discount-badge full-price">Đủ 1 tháng sử dụng</span>';
-                
-                updateQRCode(315000);
-                if (bankAmount) bankAmount.textContent = '315.000đ ($12)';
             }
-        }
-        
-        function updateQRCode(amount) {
-            const qrImage = document.getElementById('qrImage');
-            qrImage.src = `https://img.vietqr.io/image/MB-047365-compact2.png?amount=${amount}&addInfo=CLAUDE%20EMAIL&accountName=DO%20HOAI%20NAM`;
         }
 
         // Smooth scroll cho navigation
