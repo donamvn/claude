@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Team - Dịch vụ nâng cấp tài khoản chính chủ</title>
+    <meta name="description" content="Nâng cấp tài khoản Claude lên gói Team với chi phí chỉ $12/tháng. Hơn 100 khách hàng tin dùng.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D97706;
+            --primary-dark: #B45309;
+            --secondary: #1E3A5F;
+            --accent: #E85D04;
+            --bg-light: #FFF8F0;
+            --bg-card: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
+            --success: #059669;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D4A6F 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .overview-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .overview-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .overview-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .overview-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Section */
+        .comparison-bg {
+            background: linear-gradient(180deg, #F3F4F6 0%, var(--bg-light) 100%);
+        }
+
+        .comparison-table {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-header > div {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .comparison-header > div:first-child {
+            text-align: left;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row > div {
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-row > div:first-child {
+            justify-content: flex-start;
+            font-weight: 500;
+        }
+
+        .check {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        .highlight-row {
+            background: rgba(217, 119, 6, 0.1);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-badge.pro {
+            background: #E5E7EB;
+            color: var(--text-muted);
+        }
+
+        .plan-badge.team {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Process Section */
+        .process-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .process-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--secondary);
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .process-image {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .process-image img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        /* Calculator Section */
+        .calculator-bg {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D4A6F 100%);
+            color: white;
+        }
+
+        .calculator-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .calculator-info p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .discount-note {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .discount-note strong {
+            color: var(--primary);
+        }
+
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--text-dark);
+        }
+
+        .calculator-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .date-input-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .date-input-wrapper label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .date-input-wrapper input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .date-input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(232, 93, 4, 0.1) 100%);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .result-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .result-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* QR Section */
+        .qr-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .qr-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qr-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .qr-info p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .qr-steps {
+            margin-top: 30px;
+        }
+
+        .qr-step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .qr-step-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .qr-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .qr-card img {
+            max-width: 280px;
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bank-info {
+            text-align: left;
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .bank-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .bank-info strong {
+            color: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact-bg {
+            background: linear-gradient(180deg, #F3F4F6 0%, var(--bg-light) 100%);
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+
+            .comparison-row > div {
+                padding: 14px 12px;
+                font-size: 0.9rem;
+            }
+
+            .stats {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <span class="badge">🚀 Dịch vụ uy tín #1</span>
+                <h1>Nâng cấp <span class="highlight">Claude Team</span><br>Chính chủ tài khoản</h1>
+                <p class="subtitle">Giải pháp tối ưu để nâng cấp tài khoản Gmail cá nhân lên gói Claude Code Team với chi phí tiết kiệm nhất</p>
+                <a href="#payment" class="cta-button">Đăng ký ngay - Chỉ $12/tháng</a>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Khách hàng tin dùng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Tháng hoạt động ổn định</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$12</div>
+                        <div class="stat-label">Chi phí/tháng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tại sao chọn dịch vụ của chúng tôi?</h2>
+                <p>Trải nghiệm Claude Team với nhiều ưu điểm vượt trội</p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">💰</div>
+                    <h3>Chi phí tiết kiệm</h3>
+                    <p>Chỉ $12/tháng (315.000đ) - tiết kiệm đáng kể so với mua gói cá nhân. Giảm 50% nếu tham gia sau ngày 1.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">🔐</div>
+                    <h3>Tài khoản chính chủ</h3>
+                    <p>Sử dụng trực tiếp Gmail cá nhân của bạn, không cần tạo tài khoản mới. Role Team hiển thị ngay.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">⚡</div>
+                    <h3>Quota riêng biệt</h3>
+                    <p>Mỗi thành viên có quota độc lập, không ảnh hưởng đến người khác. Limit per-member hoàn toàn độc lập.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">📈</div>
+                    <h3>Hạn mức cao hơn</h3>
+                    <p>Standard seat: 1.25x so với Pro plan. Weekly limit reset 7 ngày, sử dụng thoải mái.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">👥</div>
+                    <h3>Cộng đồng 100+ thành viên</h3>
+                    <p>Tham gia nhóm hoạt động sôi nổi, trao đổi kinh nghiệm và cập nhật thông báo mới nhất.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">🔄</div>
+                    <h3>Gia hạn cố định</h3>
+                    <p>Gia hạn vào ngày 15 hàng tháng. Quy trình đơn giản, nhanh chóng chỉ trong 3 bước.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>So sánh gói Standard vs Pro</h2>
+                <p>Xem chi tiết những gì bạn nhận được với gói Team Standard</p>
+            </div>
+            
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div>Tính năng</div>
+                    <div><span class="plan-badge pro">Pro</span></div>
+                    <div><span class="plan-badge team">Team Standard</span></div>
+                </div>
+                <div class="comparison-row highlight-row">
+                    <div>Giới hạn sử dụng</div>
+                    <div>1x</div>
+                    <div><strong>1.25x</strong></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Weekly limit</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Quota độc lập (per-member)</div>
+                    <div>—</div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Truy cập tất cả models</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Sử dụng Gmail cá nhân</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row highlight-row">
+                    <div>Reset hàng tuần</div>
+                    <div>7 ngày</div>
+                    <div>7 ngày</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Hỗ trợ cộng đồng</div>
+                    <div>—</div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row highlight-row">
+                    <div>Chi phí/tháng</div>
+                    <div>$20</div>
+                    <div><strong style="color: var(--primary);">$12</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quy trình kích hoạt 3 bước</h2>
+                <p>Nhanh chóng và đơn giản, chỉ mất vài phút</p>
+            </div>
+            
+            <div class="process-wrapper">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Thanh toán</h4>
+                            <p>Quét mã QR hoặc chuyển khoản theo thông tin bên dưới. Gửi ảnh biên lai kèm email Gmail của bạn.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Nhận mail mời</h4>
+                            <p>Bạn sẽ nhận được email mời tham gia Team từ Claude. Nếu link hết hạn cũng không sao, liên hệ để được gửi lại.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Kiểm tra Role Team</h4>
+                            <p>Đăng nhập Claude, bạn sẽ thấy Role "Team" hiển thị ngay phía trên phần tài khoản cá nhân. Hoàn tất!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-image">
+                    <div style="background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); border-radius: 16px; padding: 40px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">👤</div>
+                            <div>
+                                <div style="font-weight: 600; color: var(--secondary);">Your Account</div>
+                                <div style="font-size: 0.9rem; color: var(--text-muted);">example@gmail.com</div>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 12px; border: 2px solid var(--primary);">
+                            <span style="background: var(--success); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Team ✓</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Role Team đã được kích hoạt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-bg">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-info">
+                    <h2>Công cụ tính giá</h2>
+                    <p>Gia hạn cố định vào ngày 15 hàng tháng. Nếu bạn tham gia sau ngày 15, chi phí sẽ được giảm 50%!</p>
+                    
+                    <div class="discount-note">
+                        <p><strong>Lưu ý:</strong> Chu kỳ thanh toán tính từ ngày 15 đến ngày 15 tháng sau. Nếu bạn đăng ký giữa tháng, chỉ cần trả $6 cho phần còn lại của chu kỳ.</p>
+                    </div>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Tính chi phí của bạn</h3>
+                    
+                    <div class="date-input-wrapper">
+                        <label for="joinDate">Ngày bạn muốn tham gia:</label>
+                        <input type="date" id="joinDate" onchange="calculatePrice()">
+                    </div>
+                    
+                    <div class="calc-result">
+                        <div class="result-label">Chi phí cần thanh toán</div>
+                        <div class="result-price" id="resultPrice">$12</div>
+                        <div class="result-note" id="resultNote">Chọn ngày để xem chi phí</div>
+                        <div id="discountBadge"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Payment Section -->
+    <section id="payment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Thanh toán ngay</h2>
+                <p>Quét mã QR hoặc chuyển khoản theo thông tin bên dưới</p>
+            </div>
+            
+            <div class="qr-wrapper">
+                <div class="qr-info">
+                    <h2>Hướng dẫn thanh toán</h2>
+                    <p>Sau khi thanh toán, gửi ảnh biên lai kèm email Gmail để được mời tham gia Team trong vòng 24h.</p>
+                    
+                    <div class="qr-steps">
+                        <div class="qr-step">
+                            <div class="qr-step-icon">1</div>
+                            <div>Quét mã QR hoặc chuyển khoản thủ công</div>
+                        </div>
+                        <div class="qr-step">
+                            <div class="qr-step-icon">2</div>
+                            <div>Nội dung CK: <strong>CLAUDE [Email Gmail của bạn]</strong></div>
+                        </div>
+                        <div class="qr-step">
+                            <div class="qr-step-icon">3</div>
+                            <div>Gửi ảnh biên lai qua Zalo/Facebook để được xác nhận</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="qr-card">
+                    <img src="https://img.vietqr.io/image/MB-047365-compact2.png?amount=315000&addInfo=CLAUDE%20EMAIL&accountName=DO%20HOAI%20NAM" alt="QR Code thanh toán" id="qrImage">
+                    
+                    <div class="bank-info">
+                        <p><strong>Ngân hàng:</strong> MB Bank</p>
+                        <p><strong>Số tài khoản:</strong> 047365</p>
+                        <p><strong>Chủ tài khoản:</strong> DO HOAI NAM</p>
+                        <p><strong>Số tiền:</strong> 315.000đ ($12)</p>
+                        <p><strong>Nội dung:</strong> CLAUDE [Email của bạn]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Liên hệ hỗ trợ</h2>
+                <p>Có thắc mắc? Liên hệ ngay để được tư vấn</p>
+            </div>
+            
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h4>Zalo</h4>
+                    <p>Chat trực tiếp</p>
+                    <a href="https://zalo.me/0123456789" target="_blank">Nhắn tin Zalo</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📘</div>
+                    <h4>Facebook</h4>
+                    <p>Fanpage hỗ trợ</p>
+                    <a href="https://facebook.com/donamvn" target="_blank">Nhắn tin Facebook</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">👥</div>
+                    <h4>Nhóm cộng đồng</h4>
+                    <p>50+ thành viên</p>
+                    <a href="#" target="_blank">Tham gia nhóm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Claude Team Service by Do Hoai Nam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Đặt ngày mặc định là hôm nay
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const dateInput = document.getElementById('joinDate');
+            dateInput.valueAsDate = today;
+            calculatePrice();
+        });
+
+        function calculatePrice() {
+            const dateInput = document.getElementById('joinDate');
+            const resultPrice = document.getElementById('resultPrice');
+            const resultNote = document.getElementById('resultNote');
+            const discountBadge = document.getElementById('discountBadge');
+            
+            if (!dateInput.value) {
+                resultPrice.textContent = '$12';
+                resultNote.textContent = 'Chọn ngày để xem chi phí';
+                discountBadge.innerHTML = '';
+                return;
+            }
+            
+            const selectedDate = new Date(dateInput.value);
+            const day = selectedDate.getDate();
+            
+            // Tính toán dựa trên ngày trong tháng
+            // Nếu ngày <= 15: full price $12
+            // Nếu ngày > 15: giảm 50% = $6
+            
+            if (day <= 15) {
+                resultPrice.textContent = '$12';
+                resultNote.textContent = `Tham gia ngày ${day} - thanh toán đầy đủ`;
+                discountBadge.innerHTML = '';
+                
+                // Cập nhật QR code với số tiền đầy đủ
+                updateQRCode(315000);
+            } else {
+                resultPrice.textContent = '$6';
+                resultNote.textContent = `Tham gia ngày ${day} - còn ${30 - day + 15} ngày đến kỳ gia hạn`;
+                discountBadge.innerHTML = '<span class="discount-badge">-50% Ưu đãi gia nhập muộn</span>';
+                
+                // Cập nhật QR code với số tiền giảm giá
+                updateQRCode(157500);
+            }
+        }
+        
+        function updateQRCode(amount) {
+            const qrImage = document.getElementById('qrImage');
+            qrImage.src = `https://img.vietqr.io/image/MB-047365-compact2.png?amount=${amount}&addInfo=CLAUDE%20EMAIL&accountName=DO%20HOAI%20NAM`;
+        }
+
+        // Smooth scroll cho navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
