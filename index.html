@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claude Team - Dịch vụ nâng cấp tài khoản chính chủ</title>
     <meta name="description" content="Nâng cấp tài khoản Claude lên gói Team với chi phí chỉ $12/tháng. Hơn 100 khách hàng tin dùng.">
+    <link rel="canonical" href="https://claude.donam.vn">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -450,6 +451,10 @@
             margin-top: 12px;
         }
 
+        .discount-badge.full-price {
+            background: var(--primary);
+        }
+
         /* QR Section */
         .qr-wrapper {
             display: grid;
@@ -590,6 +595,343 @@
 
         .contact-card a:hover {
             text-decoration: underline;
+        }
+
+        /* Timeline Chart */
+        .timeline-chart {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            margin-bottom: 40px;
+        }
+
+        .timeline-bar {
+            display: flex;
+            align-items: stretch;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .timeline-segment {
+            flex: 1;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .segment-discount {
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+        }
+
+        .segment-full {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .segment-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .segment-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .segment-price span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .segment-reason {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .timeline-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .marker-dot {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .marker-label {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .marker-note {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .chart-explanation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-explanation {
+                grid-template-columns: 1fr;
+            }
+            .timeline-bar {
+                flex-direction: column;
+            }
+        }
+
+        .explanation-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .explanation-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .explanation-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .explanation-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .explanation-content strong {
+            color: #FCD34D;
+        }
+
+        /* Timeline Visual */
+        .timeline-visual {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .month-block {
+            flex: 1;
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .month-block:last-child {
+            border-right: none;
+        }
+
+        .month-label {
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .day-range {
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .day-range.lost {
+            background: rgba(239, 68, 68, 0.3);
+            color: #FCA5A5;
+        }
+
+        .day-range.discount {
+            background: rgba(5, 150, 105, 0.3);
+            color: #6EE7B7;
+        }
+
+        .day-range.full {
+            background: rgba(217, 119, 6, 0.3);
+            color: #FCD34D;
+        }
+
+        .day-range.active {
+            background: rgba(59, 130, 246, 0.3);
+            color: #93C5FD;
+        }
+
+        .day-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .calculator-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--text-dark);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .calculator-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        /* Contact Section New Styles */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .messenger-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .messenger-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .messenger-logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .messenger-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .messenger-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .messenger-qr {
+            background: #F9FAFB;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .messenger-qr img {
+            max-width: 200px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .messenger-qr p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .messenger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0084FF;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .messenger-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 132, 255, 0.4);
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -843,24 +1185,88 @@
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="calculator-bg">
+    <!-- Pricing Timeline Section -->
+    <section id="pricing-timeline" class="calculator-bg">
         <div class="container">
-            <div class="calculator-wrapper">
-                <div class="calculator-info">
-                    <h2>Công cụ tính giá</h2>
-                    <p>Gia hạn cố định vào ngày 15 hàng tháng. Nếu bạn tham gia sau ngày 15, chi phí sẽ được giảm 50%!</p>
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">Cách tính chi phí theo ngày tham gia</h2>
+                <p style="color: rgba(255,255,255,0.8);">Chu kỳ thanh toán: Ngày 15 tháng này → Ngày 15 tháng sau</p>
+            </div>
+            
+            <!-- Biểu đồ minh họa -->
+            <div class="timeline-chart">
+                <div class="chart-container">
+                    <!-- Timeline bar -->
+                    <div class="timeline-bar">
+                        <div class="timeline-segment segment-discount">
+                            <div class="segment-label">Ngày 1 - 14</div>
+                            <div class="segment-price">$6 <span>(157.500đ)</span></div>
+                            <div class="segment-reason">Thiệt 15 ngày trước đó</div>
+                        </div>
+                        <div class="timeline-marker marker-15">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Ngày 15</div>
+                            <div class="marker-note">Ngày gia hạn</div>
+                        </div>
+                        <div class="timeline-segment segment-full">
+                            <div class="segment-label">Ngày 15 - 31</div>
+                            <div class="segment-price">$12 <span>(315.000đ)</span></div>
+                            <div class="segment-reason">Đủ 1 tháng sử dụng</div>
+                        </div>
+                    </div>
                     
-                    <div class="discount-note">
-                        <p><strong>Lưu ý:</strong> Chu kỳ thanh toán tính từ ngày 15 đến ngày 15 tháng sau. Nếu bạn đăng ký giữa tháng, chỉ cần trả $6 cho phần còn lại của chu kỳ.</p>
+                    <!-- Visual explanation -->
+                    <div class="chart-explanation">
+                        <div class="explanation-card">
+                            <div class="explanation-icon">📅</div>
+                            <div class="explanation-content">
+                                <h4>Tại sao ngày 1-14 chỉ trả $6?</h4>
+                                <p>Vì bạn <strong>bỏ lỡ 15 ngày</strong> của chu kỳ trước (từ ngày 15 tháng trước đến ngày bạn join). Nên chỉ trả nửa giá!</p>
+                            </div>
+                        </div>
+                        <div class="explanation-card">
+                            <div class="explanation-icon">✅</div>
+                            <div class="explanation-content">
+                                <h4>Tại sao ngày 15-31 trả $12?</h4>
+                                <p>Vì bạn được <strong>đủ 1 tháng</strong> từ ngày 15 này đến ngày 15 tháng sau. Đây là giá full!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- Timeline visual -->
+                <div class="timeline-visual">
+                    <div class="month-block prev-month">
+                        <div class="month-label">Tháng trước</div>
+                        <div class="month-days">
+                            <div class="day-range lost">15 → 31</div>
+                            <div class="day-note">Bỏ lỡ nếu join ngày 1-14</div>
+                        </div>
+                    </div>
+                    <div class="month-block current-month">
+                        <div class="month-label">Tháng này</div>
+                        <div class="month-days">
+                            <div class="day-range discount">1 → 14 = $6</div>
+                            <div class="day-range full">15 → 31 = $12</div>
+                        </div>
+                    </div>
+                    <div class="month-block next-month">
+                        <div class="month-label">Tháng sau</div>
+                        <div class="month-days">
+                            <div class="day-range active">1 → 15</div>
+                            <div class="day-note">Ngày gia hạn tiếp theo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calculator Card -->
+            <div class="calculator-card-wrapper">
                 <div class="calculator-card">
-                    <h3>Tính chi phí của bạn</h3>
+                    <h3>🧮 Tính chi phí của bạn</h3>
                     
                     <div class="date-input-wrapper">
-                        <label for="joinDate">Ngày bạn muốn tham gia:</label>
+                        <label for="joinDate">Chọn ngày bạn muốn tham gia:</label>
                         <input type="date" id="joinDate" onchange="calculatePrice()">
                     </div>
                     
@@ -886,7 +1292,7 @@
             <div class="qr-wrapper">
                 <div class="qr-info">
                     <h2>Hướng dẫn thanh toán</h2>
-                    <p>Sau khi thanh toán, gửi ảnh biên lai kèm email Gmail để được mời tham gia Team trong vòng 24h.</p>
+                    <p>Sau khi thanh toán, gửi ảnh biên lai kèm email Gmail qua Messenger để được mời tham gia Team trong vòng 24h.</p>
                     
                     <div class="qr-steps">
                         <div class="qr-step">
@@ -899,7 +1305,7 @@
                         </div>
                         <div class="qr-step">
                             <div class="qr-step-icon">3</div>
-                            <div>Gửi ảnh biên lai qua Zalo/Facebook để được xác nhận</div>
+                            <div>Gửi ảnh biên lai qua <strong>Messenger</strong> để được xác nhận</div>
                         </div>
                     </div>
                 </div>
@@ -911,7 +1317,7 @@
                         <p><strong>Ngân hàng:</strong> MB Bank</p>
                         <p><strong>Số tài khoản:</strong> 047365</p>
                         <p><strong>Chủ tài khoản:</strong> DO HOAI NAM</p>
-                        <p><strong>Số tiền:</strong> 315.000đ ($12)</p>
+                        <p><strong>Số tiền:</strong> <span id="bankAmount">315.000đ ($12)</span></p>
                         <p><strong>Nội dung:</strong> CLAUDE [Email của bạn]</p>
                     </div>
                 </div>
@@ -924,27 +1330,48 @@
         <div class="container">
             <div class="section-title">
                 <h2>Liên hệ hỗ trợ</h2>
-                <p>Có thắc mắc? Liên hệ ngay để được tư vấn</p>
+                <p>Có thắc mắc? Liên hệ ngay qua Messenger để được tư vấn</p>
             </div>
             
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <div class="contact-icon">💬</div>
-                    <h4>Zalo</h4>
-                    <p>Chat trực tiếp</p>
-                    <a href="https://zalo.me/0123456789" target="_blank">Nhắn tin Zalo</a>
+            <div class="contact-wrapper">
+                <div class="contact-main">
+                    <div class="messenger-card">
+                        <div class="messenger-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" class="messenger-logo">
+                            <div>
+                                <h3>Nhắn tin qua Messenger</h3>
+                                <p>Phản hồi nhanh trong vòng 24h</p>
+                            </div>
+                        </div>
+                        <div class="messenger-qr">
+                            <img src="https://claude.donam.vn/messenger-qr.png" alt="QR Messenger" id="messengerQR">
+                            <p>Quét mã QR để nhắn tin</p>
+                        </div>
+                        <a href="https://www.facebook.com/donamthuongtin/" target="_blank" class="messenger-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.936 1.444 5.544 3.7 7.254v3.503l3.258-1.79c.893.252 1.837.39 2.842.39 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.047 12.434l-2.53-2.71-4.942 2.71 5.425-5.79 2.593 2.71 4.879-2.71-5.425 5.79z"/>
+                            </svg>
+                            Nhắn tin Facebook
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📘</div>
-                    <h4>Facebook</h4>
-                    <p>Fanpage hỗ trợ</p>
-                    <a href="https://facebook.com/donamvn" target="_blank">Nhắn tin Facebook</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">👥</div>
-                    <h4>Nhóm cộng đồng</h4>
-                    <p>50+ thành viên</p>
-                    <a href="#" target="_blank">Tham gia nhóm</a>
+                
+                <div class="contact-info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">👥</div>
+                        <h4>Cộng đồng 100+ thành viên</h4>
+                        <p>Tham gia nhóm để trao đổi kinh nghiệm và nhận thông báo mới nhất</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⚡</div>
+                        <h4>Phản hồi nhanh</h4>
+                        <p>Hỗ trợ 24/7, xử lý yêu cầu trong vòng vài giờ</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔒</div>
+                        <h4>Cam kết uy tín</h4>
+                        <p>2+ tháng hoạt động ổn định, 100+ khách hàng tin dùng</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -971,6 +1398,7 @@
             const resultPrice = document.getElementById('resultPrice');
             const resultNote = document.getElementById('resultNote');
             const discountBadge = document.getElementById('discountBadge');
+            const bankAmount = document.getElementById('bankAmount');
             
             if (!dateInput.value) {
                 resultPrice.textContent = '$12';
@@ -982,24 +1410,26 @@
             const selectedDate = new Date(dateInput.value);
             const day = selectedDate.getDate();
             
-            // Tính toán dựa trên ngày trong tháng
-            // Nếu ngày <= 15: full price $12
-            // Nếu ngày > 15: giảm 50% = $6
+            // Logic tính giá:
+            // Ngày 1-14: $6 (157.500đ) - Thiệt 15 ngày trước đó (từ 15 tháng trước)
+            // Ngày 15-31: $12 (315.000đ) - Đủ 1 tháng (từ 15 này đến 15 tháng sau)
             
-            if (day <= 15) {
-                resultPrice.textContent = '$12';
-                resultNote.textContent = `Tham gia ngày ${day} - thanh toán đầy đủ`;
-                discountBadge.innerHTML = '';
-                
-                // Cập nhật QR code với số tiền đầy đủ
-                updateQRCode(315000);
-            } else {
+            if (day < 15) {
+                // Ngày 1-14: Giảm 50% vì thiệt 15 ngày
                 resultPrice.textContent = '$6';
-                resultNote.textContent = `Tham gia ngày ${day} - còn ${30 - day + 15} ngày đến kỳ gia hạn`;
-                discountBadge.innerHTML = '<span class="discount-badge">-50% Ưu đãi gia nhập muộn</span>';
+                resultNote.textContent = `Ngày ${day} → Bỏ lỡ ${15 - day + (day > 0 ? 0 : 15)} ngày của chu kỳ trước`;
+                discountBadge.innerHTML = '<span class="discount-badge">-50% Giảm giá vì thiệt ngày</span>';
                 
-                // Cập nhật QR code với số tiền giảm giá
                 updateQRCode(157500);
+                if (bankAmount) bankAmount.textContent = '157.500đ ($6)';
+            } else {
+                // Ngày 15-31: Giá đầy đủ vì được dùng đủ 1 tháng
+                resultPrice.textContent = '$12';
+                resultNote.textContent = `Ngày ${day} → Đủ 1 tháng (15/${selectedDate.getMonth() + 1} → 15/${selectedDate.getMonth() + 2})`;
+                discountBadge.innerHTML = '<span class="discount-badge full-price">Đủ 1 tháng sử dụng</span>';
+                
+                updateQRCode(315000);
+                if (bankAmount) bankAmount.textContent = '315.000đ ($12)';
             }
         }
         
