@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claude Team - Nhóm chia sẻ gói Team chính chủ từ Anthropic</title>
-    <meta name="description" content="Tham gia nhóm chia sẻ gói Claude Team chính chủ. Mua trực tiếp từ Anthropic, chia sẻ chi phí chỉ $12/tháng. 100+ thành viên.">
+    <meta name="description" content="Tham gia nhóm chia sẻ gói Claude Team chính chủ. Mua trực tiếp từ Anthropic. Standard $12/tháng hoặc Premium $59/tháng. 100+ thành viên.">
     <link rel="canonical" href="https://claude.donam.vn">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -267,6 +267,263 @@
             background: var(--primary);
             color: white;
         }
+
+        .plan-badge.premium {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+        }
+
+        /* ===== PRICING TABS ===== */
+        .pricing-tabs-section {
+            background: linear-gradient(180deg, var(--secondary) 0%, #1a3555 100%);
+            padding: 60px 0;
+        }
+
+        .pricing-tabs-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricing-tabs-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .pricing-tabs-title p {
+            color: rgba(255,255,255,0.75);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tab-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            padding: 12px 32px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .tab-btn.active-standard {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .tab-btn.active-premium {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .pricing-cards-wrapper {
+            display: none;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        .pricing-cards-wrapper.active {
+            display: block;
+        }
+
+        .pricing-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .pricing-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-card {
+            border-radius: 24px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.standard {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .pricing-card.premium {
+            background: linear-gradient(135deg, rgba(124,58,237,0.3) 0%, rgba(79,70,229,0.2) 100%);
+            border: 2px solid rgba(124,58,237,0.6);
+        }
+
+        .pricing-card.premium::before {
+            content: '⭐ PHỔ BIẾN NHẤT';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card-header {
+            margin-bottom: 24px;
+        }
+
+        .pricing-plan-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        .pricing-amount span {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .pricing-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pricing-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.4;
+        }
+
+        .pricing-feature-list li .feat-icon {
+            flex-shrink: 0;
+            font-size: 1rem;
+            margin-top: 1px;
+        }
+
+        .pricing-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pricing-cta-btn.std {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .pricing-cta-btn.prem {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+        }
+
+        .pricing-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        /* Quota comparison table for seats */
+        .quota-table {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .quota-header {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr;
+            background: var(--secondary);
+            color: white;
+            font-weight: 700;
+        }
+
+        .quota-header > div {
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .quota-header > div:first-child {
+            text-align: left;
+        }
+
+        .quota-row {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quota-row:last-child {
+            border-bottom: none;
+        }
+
+        .quota-row > div {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .quota-row > div:first-child {
+            justify-content: flex-start;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .quota-highlight {
+            background: rgba(124,58,237,0.06);
+        }
+
+        .quota-price-row {
+            background: #F9FAFB;
+        }
+
+        .std-col { color: var(--primary); font-weight: 600; }
+        .prem-col { color: #7C3AED; font-weight: 700; }
 
         /* Process Section */
         .process-wrapper {
@@ -1012,7 +1269,10 @@
                 <span class="badge">👥 Nhóm chia sẻ chính thức</span>
                 <h1>Cùng dùng <span class="highlight">Claude Team</span><br>Chia sẻ chi phí hợp lý</h1>
                 <p class="subtitle">Tham gia nhóm sử dụng gói Claude Team chính chủ - Mua trực tiếp từ Anthropic với hóa đơn. Cùng chia sẻ chi phí, tiết kiệm hơn so với mua riêng.</p>
-<a href="#contact" class="cta-button">Tham gia nhóm - Chỉ $12/tháng</a>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+  <a href="#pricing" class="cta-button">Standard - $12/tháng</a>
+  <a href="#pricing" class="cta-button" style="background:linear-gradient(135deg,#7C3AED 0%,#4F46E5 100%);">Premium - $59/tháng</a>
+</div>
                 
                 <div class="stats">
                     <div class="stat-item">
@@ -1025,7 +1285,11 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">$12</div>
-                        <div class="stat-label">Chi phí/tháng</div>
+                        <div class="stat-label">Standard/tháng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color:#A78BFA;">$59</div>
+                        <div class="stat-label">Premium/tháng</div>
                     </div>
                 </div>
             </div>
@@ -1080,6 +1344,136 @@
         </div>
     </section>
 
+    <!-- ===== PRICING TABS SECTION ===== -->
+    <section id="pricing" class="pricing-tabs-section">
+        <div class="container">
+            <div class="pricing-tabs-title">
+                <h2>Chọn gói phù hợp với bạn</h2>
+                <p>Standard cho người dùng thông thường · Premium cho người dùng nặng cần quota cao hơn</p>
+            </div>
+
+            <!-- Tab switcher -->
+            <div class="tab-switcher">
+                <button class="tab-btn active-standard" id="tabStd" onclick="showTab('standard')">⚡ Standard — $12/tháng</button>
+                <button class="tab-btn" id="tabPrem" onclick="showTab('premium')">💎 Premium — $59/tháng</button>
+            </div>
+
+            <!-- Standard content -->
+            <div class="pricing-cards-wrapper active" id="panelStandard">
+                <div class="pricing-compare">
+                    <div class="pricing-card standard">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name">Standard Seat</div>
+                            <div class="pricing-amount">$12 <span>/tháng</span></div>
+                        </div>
+                        <ul class="pricing-feature-list">
+                            <li><span class="feat-icon">📊</span> <span><strong>1.25x</strong> so với Pro plan — tất cả models</span></li>
+                            <li><span class="feat-icon">🔄</span> <span>1 weekly limit chung · reset mỗi 7 ngày</span></li>
+                            <li><span class="feat-icon">🔐</span> <span>Quota riêng biệt, không chia sẻ pool</span></li>
+                            <li><span class="feat-icon">📧</span> <span>Gmail cá nhân được mời vào Team</span></li>
+                            <li><span class="feat-icon">✅</span> <span>Gói chính chủ có hóa đơn Anthropic</span></li>
+                            <li><span class="feat-icon">👥</span> <span>Hỗ trợ cộng đồng 100+ thành viên</span></li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta-btn std">Đăng ký Standard ngay</a>
+                    </div>
+
+                    <div class="pricing-card standard" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.1);">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:rgba(255,255,255,0.5);">Phù hợp nếu bạn…</div>
+                        </div>
+                        <ul class="pricing-feature-list" style="margin-bottom:0;">
+                            <li><span class="feat-icon">✔️</span> <span>Dùng Claude thường xuyên cho công việc, học tập</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Muốn tiết kiệm so với Pro ($20/tháng)</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Cần quota ổn định, không bị ảnh hưởng bởi người khác</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Mới bắt đầu tìm hiểu Claude Team</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium content -->
+            <div class="pricing-cards-wrapper" id="panelPremium">
+                <div class="pricing-compare">
+                    <div class="pricing-card premium">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name">Premium Seat</div>
+                            <div class="pricing-amount">$59 <span>/tháng</span></div>
+                        </div>
+                        <ul class="pricing-feature-list">
+                            <li><span class="feat-icon">🚀</span> <span><strong>6.25x</strong> so với Pro plan — gấp 5x so với Standard!</span></li>
+                            <li><span class="feat-icon">⚡</span> <span><strong>2 weekly limits</strong>: chung tất cả models + riêng Claude Sonnet</span></li>
+                            <li><span class="feat-icon">🔄</span> <span>Reset tuần (7 ngày) — cả 2 limits đều reset riêng biệt</span></li>
+                            <li><span class="feat-icon">🔐</span> <span>Quota hoàn toàn độc lập per-member, không chia pool</span></li>
+                            <li><span class="feat-icon">📧</span> <span>Gmail cá nhân được mời vào Team</span></li>
+                            <li><span class="feat-icon">✅</span> <span>Gói chính chủ có hóa đơn Anthropic</span></li>
+                            <li><span class="feat-icon">💬</span> <span>Hỗ trợ ưu tiên từ admin</span></li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta-btn prem">Đăng ký Premium ngay</a>
+                    </div>
+
+                    <div class="pricing-card" style="background:rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.3);">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:rgba(255,255,255,0.6);">Phù hợp nếu bạn…</div>
+                        </div>
+                        <ul class="pricing-feature-list" style="margin-bottom:0;">
+                            <li><span class="feat-icon">✔️</span> <span>Dùng Claude rất nhiều, thường xuyên hit limit Standard</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Cần quota cao cho Claude Sonnet (model mạnh nhất)</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Developer, researcher, content creator chuyên nghiệp</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Muốn 6.25x quota so với Pro mà không cần API riêng</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quota comparison table -->
+            <div style="margin-top:48px;">
+                <h3 style="text-align:center;color:rgba(255,255,255,0.9);font-size:1.2rem;font-weight:600;margin-bottom:24px;">Chi tiết quota theo loại Seat</h3>
+                <div class="quota-table">
+                    <div class="quota-header">
+                        <div>Loại Seat</div>
+                        <div>Standard<br><small style="font-weight:400;opacity:.8;">$12/tháng</small></div>
+                        <div style="color:#C4B5FD;">Premium<br><small style="font-weight:400;opacity:.8;">$59/tháng</small></div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Quota so với Pro plan</div>
+                        <div class="std-col">1.25x</div>
+                        <div class="prem-col">6.25x 🚀</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Weekly limit models chung</div>
+                        <div class="std-col">✓ 1 limit</div>
+                        <div class="prem-col">✓ 1 limit</div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Weekly limit riêng Claude Sonnet</div>
+                        <div style="color:var(--text-muted);">—</div>
+                        <div class="prem-col">✓ Thêm 1 limit</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Reset chu kỳ</div>
+                        <div class="std-col">7 ngày</div>
+                        <div class="prem-col">7 ngày</div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Quota độc lập per-member</div>
+                        <div class="std-col">✓</div>
+                        <div class="prem-col">✓</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Không có pool chung</div>
+                        <div class="std-col">✓</div>
+                        <div class="prem-col">✓</div>
+                    </div>
+                    <div class="quota-row quota-price-row">
+                        <div style="font-weight:700;">Giá/tháng</div>
+                        <div class="std-col" style="font-size:1.2rem;">$12</div>
+                        <div class="prem-col" style="font-size:1.2rem;">$59</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Renewal Policy Section -->
     <section id="renewal-policy" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 40px 0;">
         <div class="container">
@@ -1101,55 +1495,70 @@
     <section id="comparison" class="comparison-bg">
         <div class="container">
             <div class="section-title">
-                <h2>So sánh gói Standard vs Pro</h2>
-                <p>Xem chi tiết những gì bạn nhận được với gói Team Standard</p>
+                <h2>So sánh gói Claude (Pro vs Standard vs Premium)</h2>
+                <p>Xem chi tiết những gì bạn nhận được với từng gói trong nhóm</p>
             </div>
             
-            <div class="comparison-table">
-                <div class="comparison-header">
+            <div class="comparison-table" style="max-width:1000px;">
+                <div class="comparison-header" style="grid-template-columns:2fr 1fr 1fr 1fr;">
                     <div>Tính năng</div>
                     <div><span class="plan-badge pro">Pro</span></div>
-                    <div><span class="plan-badge team">Team Standard</span></div>
+                    <div><span class="plan-badge team">Standard</span></div>
+                    <div><span class="plan-badge premium">Premium</span></div>
                 </div>
-                <div class="comparison-row highlight-row">
-                    <div>Giới hạn sử dụng</div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Quota so với Pro</div>
                     <div>1x</div>
                     <div><strong>1.25x</strong></div>
+                    <div><strong style="color:#7C3AED;">6.25x 🚀</strong></div>
                 </div>
-                <div class="comparison-row">
-                    <div>Weekly limit</div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Weekly limit (models chung)</div>
                     <div><span class="check">✓</span></div>
                     <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
                 </div>
-                <div class="comparison-row">
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Weekly limit riêng Claude Sonnet</div>
+                    <div>—</div>
+                    <div>—</div>
+                    <div><span class="check" style="color:#7C3AED;">✓</span></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
                     <div>Quota độc lập (per-member)</div>
                     <div>—</div>
                     <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
                 </div>
-                <div class="comparison-row">
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
                     <div>Truy cập tất cả models</div>
                     <div><span class="check">✓</span></div>
                     <div><span class="check">✓</span></div>
-                </div>
-                <div class="comparison-row">
-                    <div>Sử dụng Gmail cá nhân</div>
-                    <div><span class="check">✓</span></div>
                     <div><span class="check">✓</span></div>
                 </div>
-                <div class="comparison-row highlight-row">
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
                     <div>Reset hàng tuần</div>
                     <div>7 ngày</div>
                     <div>7 ngày</div>
+                    <div>7 ngày</div>
                 </div>
-                <div class="comparison-row">
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Sử dụng Gmail cá nhân</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
                     <div>Hỗ trợ cộng đồng</div>
                     <div>—</div>
                     <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
                 </div>
-                <div class="comparison-row highlight-row">
-                    <div>Chi phí/tháng</div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div><strong>Chi phí/tháng</strong></div>
                     <div>$20</div>
                     <div><strong style="color: var(--primary);">$12</strong></div>
+                    <div><strong style="color:#7C3AED;">$59</strong></div>
                 </div>
             </div>
         </div>
@@ -1286,7 +1695,15 @@
             <div class="calculator-card-wrapper">
                 <div class="calculator-card">
                     <h3>🧮 Tính chi phí của bạn</h3>
-                    
+
+                    <div class="date-input-wrapper">
+                        <label>Chọn gói:</label>
+                        <div style="display:flex;gap:8px;margin-bottom:16px;">
+                            <button onclick="setPlan('standard')" id="planBtnStd" style="flex:1;padding:10px;border-radius:8px;border:2px solid var(--primary);background:var(--primary);color:white;font-weight:600;cursor:pointer;font-family:inherit;">Standard</button>
+                            <button onclick="setPlan('premium')" id="planBtnPrem" style="flex:1;padding:10px;border-radius:8px;border:2px solid #C4B5FD;background:transparent;color:#7C3AED;font-weight:600;cursor:pointer;font-family:inherit;">Premium</button>
+                        </div>
+                    </div>
+
                     <div class="date-input-wrapper">
                         <label for="joinDate">Chọn ngày bạn muốn tham gia:</label>
                         <input type="date" id="joinDate" onchange="calculatePrice()">
@@ -1505,6 +1922,45 @@
     </footer>
 
     <script>
+        let currentPlan = 'standard';
+        const PRICES = { standard: 12, premium: 59 };
+
+        function showTab(tab) {
+            document.getElementById('panelStandard').classList.toggle('active', tab === 'standard');
+            document.getElementById('panelPremium').classList.toggle('active', tab === 'premium');
+            const btnStd = document.getElementById('tabStd');
+            const btnPrem = document.getElementById('tabPrem');
+            if (tab === 'standard') {
+                btnStd.className = 'tab-btn active-standard';
+                btnPrem.className = 'tab-btn';
+            } else {
+                btnStd.className = 'tab-btn';
+                btnPrem.className = 'tab-btn active-premium';
+            }
+        }
+
+        function setPlan(plan) {
+            currentPlan = plan;
+            const btnStd = document.getElementById('planBtnStd');
+            const btnPrem = document.getElementById('planBtnPrem');
+            if (plan === 'standard') {
+                btnStd.style.background = 'var(--primary)';
+                btnStd.style.color = 'white';
+                btnStd.style.borderColor = 'var(--primary)';
+                btnPrem.style.background = 'transparent';
+                btnPrem.style.color = '#7C3AED';
+                btnPrem.style.borderColor = '#C4B5FD';
+            } else {
+                btnPrem.style.background = '#7C3AED';
+                btnPrem.style.color = 'white';
+                btnPrem.style.borderColor = '#7C3AED';
+                btnStd.style.background = 'transparent';
+                btnStd.style.color = 'var(--primary)';
+                btnStd.style.borderColor = 'var(--primary)';
+            }
+            calculatePrice();
+        }
+
         // Đặt ngày mặc định là hôm nay
         document.addEventListener('DOMContentLoaded', function() {
             const today = new Date();
@@ -1518,9 +1974,13 @@
             const resultPrice = document.getElementById('resultPrice');
             const resultNote = document.getElementById('resultNote');
             const discountBadge = document.getElementById('discountBadge');
+            const fullPrice = PRICES[currentPlan];
+            const halfPrice = Math.round(fullPrice / 2);
+            const vndFull = currentPlan === 'standard' ? '315.000đ' : '1.545.750đ';
+            const vndHalf = currentPlan === 'standard' ? '157.500đ' : '772.875đ';
             
             if (!dateInput.value) {
-                resultPrice.textContent = '$12';
+                resultPrice.textContent = '$' + fullPrice;
                 resultNote.textContent = 'Chọn ngày để xem chi phí';
                 discountBadge.innerHTML = '';
                 return;
@@ -1528,20 +1988,17 @@
             
             const selectedDate = new Date(dateInput.value);
             const day = selectedDate.getDate();
-            
-            // Logic tính giá:
-            // Ngày 1-14: $6 (157.500đ) - Thiệt 15 ngày trước đó (từ 15 tháng trước)
-            // Ngày 15-31: $12 (315.000đ) - Đủ 1 tháng (từ 15 này đến 15 tháng sau)
+
+            const color = currentPlan === 'premium' ? '#7C3AED' : 'var(--primary)';
+            resultPrice.style.color = color;
             
             if (day < 15) {
-                // Ngày 1-14: Giảm 50% vì thiệt 15 ngày
-                resultPrice.textContent = '$6';
-                resultNote.textContent = `Ngày ${day} → Bỏ lỡ ${15 - day + (day > 0 ? 0 : 15)} ngày của chu kỳ trước`;
+                resultPrice.textContent = '$' + halfPrice;
+                resultNote.textContent = `Ngày ${day} → Bỏ lỡ ${15 - day} ngày của chu kỳ trước (~${vndHalf})`;
                 discountBadge.innerHTML = '<span class="discount-badge">-50% Giảm giá vì thiệt ngày</span>';
             } else {
-                // Ngày 15-31: Giá đầy đủ vì được dùng đủ 1 tháng
-                resultPrice.textContent = '$12';
-                resultNote.textContent = `Ngày ${day} → Đủ 1 tháng (15/${selectedDate.getMonth() + 1} → 15/${selectedDate.getMonth() + 2})`;
+                resultPrice.textContent = '$' + fullPrice;
+                resultNote.textContent = `Ngày ${day} → Đủ 1 tháng (15/${selectedDate.getMonth() + 1} → 15/${selectedDate.getMonth() + 2}) (~${vndFull})`;
                 discountBadge.innerHTML = '<span class="discount-badge full-price">Đủ 1 tháng sử dụng</span>';
             }
         }
