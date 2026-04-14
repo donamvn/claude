@@ -1239,6 +1239,258 @@
             animation: fadeInUp 0.6s ease-out forwards;
         }
 
+        /* ===== RENEWAL ANNOUNCEMENT BANNER ===== */
+        .renewal-banner {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .renewal-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.03) 40px
+            );
+            pointer-events: none;
+        }
+
+        .renewal-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px 20px;
+        }
+
+        .renewal-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .renewal-pulse {
+            width: 12px; height: 12px;
+            background: #FCD34D;
+            border-radius: 50%;
+            animation: rnPulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes rnPulse { 0%,100%{box-shadow:0 0 0 0 rgba(252,211,77,0.7)} 50%{box-shadow:0 0 0 10px rgba(252,211,77,0)} }
+
+        .renewal-title {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .renewal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 680px) {
+            .renewal-body { grid-template-columns: 1fr; }
+        }
+
+        .renewal-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .renewal-card h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 12px;
+            opacity: 0.85;
+        }
+
+        .renewal-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .renewal-price-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .renewal-price-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #FCD34D;
+        }
+
+        .renewal-note {
+            font-size: 0.82rem;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+
+        .renewal-next-price {
+            color: #FCA5A5;
+            font-weight: 600;
+        }
+
+        .renewal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .renewal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .renewal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .renewal-btn.zalo {
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            color: white;
+        }
+
+        .renewal-btn.messenger {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .renewal-footer-note {
+            text-align: center;
+            font-size: 0.82rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .renewal-warn-box {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .renewal-warn-box .warn-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== ZALO CARD ===== */
+        .zalo-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #0068FF;
+        }
+
+        .zalo-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .zalo-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .zalo-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .zalo-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .zalo-benefits {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .zalo-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .zalo-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .zalo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .zalo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 104, 255, 0.4);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .comparison-header,
@@ -1257,6 +1509,10 @@
 
             .stat-number {
                 font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1295,6 +1551,66 @@
             </div>
         </div>
     </header>
+
+    <!-- ===== RENEWAL ANNOUNCEMENT BANNER ===== -->
+    <section class="renewal-banner" id="renewal-notice">
+        <div class="renewal-inner">
+            <div class="renewal-header">
+                <div class="renewal-pulse"></div>
+                <div class="renewal-title">📢 THÔNG BÁO GIA HẠN — Tháng 4/2026</div>
+                <div class="renewal-pulse"></div>
+            </div>
+
+            <div class="renewal-warn-box">
+                <div class="warn-icon">⏰</div>
+                <div>
+                    <strong>Ngày mai đã đến lịch gia hạn!</strong> Nếu có nhu cầu dùng tiếp tháng mới (đến 15/5), xin liên hệ lại ạ.
+                    Nếu không, qua ngày mai sẽ set về <strong>free account</strong> (không mất nội dung chat),
+                    khoảng 15 – 30 ngày sau đó sẽ bị <strong>remove khỏi team</strong>.
+                    <br><em style="opacity:0.75;">Nếu các bác đã gia hạn xin bỏ qua tin nhắn này ạ. Thank you!</em>
+                </div>
+            </div>
+
+            <div class="renewal-body">
+                <div class="renewal-card">
+                    <h4>💰 Giá tháng này (giữ nguyên)</h4>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Standard:</span>
+                        <span class="renewal-price-value">315.000đ</span>
+                    </div>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Premium:</span>
+                        <span class="renewal-price-value">1.555.000đ</span>
+                    </div>
+                </div>
+                <div class="renewal-card" style="border-color: rgba(252,165,165,0.4);">
+                    <h4>📈 Dự kiến giá tháng sau</h4>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Standard:</span>
+                        <span class="renewal-next-price" style="font-size:1.5rem;font-weight:800;">350.000đ</span>
+                    </div>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Premium:</span>
+                        <span class="renewal-next-price" style="font-size:1.5rem;font-weight:800;">1.800.000đ</span>
+                    </div>
+                    <p class="renewal-note">Do team tăng nhanh nên ngoài thuế lại bị tăng phí quy đổi ngoại tệ.</p>
+                </div>
+            </div>
+
+            <div class="renewal-actions">
+                <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" class="renewal-btn zalo">
+                    💬 Join nhóm Zalo để nhận thông báo
+                </a>
+                <a href="#contact" class="renewal-btn messenger">
+                    📩 Liên hệ gia hạn ngay
+                </a>
+            </div>
+
+            <p class="renewal-footer-note">
+                Xin bạn dành chút thời gian join nhóm Zalo để tiện thông báo các lần gia hạn tiếp theo.
+            </p>
+        </div>
+    </section>
 
     <!-- Overview Section -->
     <section id="overview">
@@ -1749,6 +2065,26 @@
                             Nhắn tin Facebook
                         </a>
                     </div>
+
+                    <!-- Zalo Group Card -->
+                    <div class="zalo-card" style="margin-top: 24px;">
+                        <div class="zalo-header">
+                            <div class="zalo-logo">Zalo</div>
+                            <div>
+                                <h3>Nhóm Zalo — Claude Team</h3>
+                                <p>Nhận thông báo gia hạn nhanh nhất</p>
+                            </div>
+                        </div>
+                        <ul class="zalo-benefits" style="list-style:none;padding:0;margin:0 0 20px 0;">
+                            <li>📢 Thông báo gia hạn hàng tháng</li>
+                            <li>💬 Trao đổi, hỗ trợ nhanh</li>
+                            <li>📋 Cập nhật giá & chính sách mới</li>
+                            <li>👥 Kết nối với cộng đồng thành viên</li>
+                        </ul>
+                        <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" class="zalo-btn">
+                            💬 Join nhóm Zalo ngay
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="contact-info-cards">
@@ -1766,6 +2102,14 @@
                         <div class="info-icon">🔒</div>
                         <h4>Hoạt động ổn định</h4>
                         <p>2+ tháng hoạt động, 100+ thành viên sử dụng ổn định</p>
+                    </div>
+                    <div class="info-card" style="border: 2px solid #0068FF;">
+                        <div class="info-icon">💬</div>
+                        <div>
+                            <h4 style="color: #0068FF;">Nhóm Zalo</h4>
+                            <p>Join nhóm Zalo để nhận thông báo gia hạn và hỗ trợ nhanh nhất</p>
+                            <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" style="color: #0068FF; font-weight: 600; font-size: 0.85rem; display: inline-block; margin-top: 6px;">→ Tham gia ngay</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2079,8 +2423,8 @@
             const discountBadge = document.getElementById('discountBadge');
             const fullPrice = PRICES[currentPlan];
             const halfPrice = Math.round(fullPrice / 2);
-            const vndFull = currentPlan === 'standard' ? '315.000đ' : '1.545.750đ';
-            const vndHalf = currentPlan === 'standard' ? '157.500đ' : '772.875đ';
+            const vndFull = currentPlan === 'standard' ? '315.000đ' : '1.555.000đ';
+            const vndHalf = currentPlan === 'standard' ? '157.500đ' : '777.500đ';
             
             if (!dateInput.value) {
                 resultPrice.textContent = '$' + fullPrice;
