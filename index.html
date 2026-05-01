@@ -1977,102 +1977,21 @@
     <section id="pricing-timeline" class="calculator-bg">
         <div class="container">
             <div class="section-title" style="color: white;">
-                <h2 style="color: white;">Cách tính chi phí theo ngày tham gia</h2>
-                <p style="color: rgba(255,255,255,0.8);">Chu kỳ thanh toán: Ngày 15 tháng này → Ngày 15 tháng sau</p>
+                <h2 style="color: white;">Tham gia giữa chu kỳ?</h2>
+                <p style="color: rgba(255,255,255,0.8);">Ngày gia hạn cố định: mùng 1 và ngày 15 hàng tháng</p>
             </div>
-            
-            <!-- Biểu đồ minh họa -->
-            <div class="timeline-chart">
-                <div class="chart-container">
-                    <!-- Timeline bar -->
-                    <div class="timeline-bar">
-                        <div class="timeline-segment segment-discount">
-                            <div class="segment-label">Ngày 1 - 14</div>
-                            <div class="segment-price">175.000đ</div>
-                            <div class="segment-reason">Thiệt 15 ngày trước đó</div>
-                        </div>
-                        <div class="timeline-marker marker-15">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Ngày 15</div>
-                            <div class="marker-note">Ngày gia hạn</div>
-                        </div>
-                        <div class="timeline-segment segment-full">
-                            <div class="segment-label">Ngày 15 - 31</div>
-                            <div class="segment-price">350.000đ</div>
-                            <div class="segment-reason">Đủ 1 tháng sử dụng</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Visual explanation -->
-                    <div class="chart-explanation">
-                        <div class="explanation-card">
-                            <div class="explanation-icon">📅</div>
-                            <div class="explanation-content">
-                                <h4>Tại sao ngày 1-14 chỉ trả 175.000đ?</h4>
-                                <p>Vì bạn <strong>bỏ lỡ 15 ngày</strong> của chu kỳ trước (từ ngày 15 tháng trước đến ngày bạn join). Nên chỉ trả nửa giá!</p>
-                            </div>
-                        </div>
-                        <div class="explanation-card">
-                            <div class="explanation-icon">✅</div>
-                            <div class="explanation-content">
-                                <h4>Tại sao ngày 15-31 trả 350.000đ?</h4>
-                                <p>Vì bạn được <strong>đủ 1 tháng</strong> từ ngày 15 này đến ngày 15 tháng sau. Đây là giá full!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline visual -->
-                <div class="timeline-visual">
-                    <div class="month-block prev-month">
-                        <div class="month-label">Tháng trước</div>
-                        <div class="month-days">
-                            <div class="day-range lost">15 → 31</div>
-                            <div class="day-note">Bỏ lỡ nếu join ngày 1-14</div>
-                        </div>
-                    </div>
-                    <div class="month-block current-month">
-                        <div class="month-label">Tháng này</div>
-                        <div class="month-days">
-                            <div class="day-range discount">1 → 14 = 175K</div>
-                            <div class="day-range full">15 → 31 = 350K</div>
-                        </div>
-                    </div>
-                    <div class="month-block next-month">
-                        <div class="month-label">Tháng sau</div>
-                        <div class="month-days">
-                            <div class="day-range active">1 → 15</div>
-                            <div class="day-note">Ngày gia hạn tiếp theo</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Calculator Card -->
-            <div class="calculator-card-wrapper">
-                <div class="calculator-card">
-                    <h3>🧮 Tính chi phí của bạn</h3>
 
-                    <div class="date-input-wrapper">
-                        <label>Chọn gói:</label>
-                        <div style="display:flex;gap:8px;margin-bottom:16px;">
-                            <button onclick="setPlan('standard')" id="planBtnStd" style="flex:1;padding:10px;border-radius:8px;border:2px solid var(--primary);background:var(--primary);color:white;font-weight:600;cursor:pointer;font-family:inherit;">Standard</button>
-                            <button onclick="setPlan('premium')" id="planBtnPrem" style="flex:1;padding:10px;border-radius:8px;border:2px solid #C4B5FD;background:transparent;color:#7C3AED;font-weight:600;cursor:pointer;font-family:inherit;">Premium</button>
-                        </div>
-                    </div>
-
-                    <div class="date-input-wrapper">
-                        <label for="joinDate">Chọn ngày bạn muốn tham gia:</label>
-                        <input type="date" id="joinDate" onchange="calculatePrice()">
-                    </div>
-                    
-                    <div class="calc-result">
-                        <div class="result-label">Chi phí cần thanh toán</div>
-                        <div class="result-price" id="resultPrice">350.000đ</div>
-                        <div class="result-note" id="resultNote">Chọn ngày để xem chi phí</div>
-                        <div id="discountBadge"></div>
-                    </div>
-                </div>
+            <div style="max-width:720px; margin: 0 auto; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 40px 32px; text-align: center; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 16px;">📞</div>
+                <h3 style="color: white; font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;">
+                    Nếu bạn muốn tham gia vào thời điểm khác mùng 1 hoặc ngày 15
+                </h3>
+                <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+                    Vui lòng <strong>liên hệ</strong> để được tư vấn về chi phí và phương án tham gia phù hợp với thời điểm bạn mong muốn.
+                </p>
+                <a href="#contact" class="renewal-btn messenger" style="display:inline-flex;">
+                    📩 Liên hệ để biết thêm thông tin
+                </a>
             </div>
         </div>
     </section>
@@ -2410,9 +2329,6 @@
     </footer>
 
     <script>
-        let currentPlan = 'standard';
-        const PRICES = { standard: 12, premium: 59 };
-
         function showTab(tab) {
             document.getElementById('panelStandard').classList.toggle('active', tab === 'standard');
             document.getElementById('panelPremium').classList.toggle('active', tab === 'premium');
@@ -2424,70 +2340,6 @@
             } else {
                 btnStd.className = 'tab-btn';
                 btnPrem.className = 'tab-btn active-premium';
-            }
-        }
-
-        function setPlan(plan) {
-            currentPlan = plan;
-            const btnStd = document.getElementById('planBtnStd');
-            const btnPrem = document.getElementById('planBtnPrem');
-            if (plan === 'standard') {
-                btnStd.style.background = 'var(--primary)';
-                btnStd.style.color = 'white';
-                btnStd.style.borderColor = 'var(--primary)';
-                btnPrem.style.background = 'transparent';
-                btnPrem.style.color = '#7C3AED';
-                btnPrem.style.borderColor = '#C4B5FD';
-            } else {
-                btnPrem.style.background = '#7C3AED';
-                btnPrem.style.color = 'white';
-                btnPrem.style.borderColor = '#7C3AED';
-                btnStd.style.background = 'transparent';
-                btnStd.style.color = 'var(--primary)';
-                btnStd.style.borderColor = 'var(--primary)';
-            }
-            calculatePrice();
-        }
-
-        // Đặt ngày mặc định là hôm nay
-        document.addEventListener('DOMContentLoaded', function() {
-            const today = new Date();
-            const dateInput = document.getElementById('joinDate');
-            dateInput.valueAsDate = today;
-            calculatePrice();
-        });
-
-        function calculatePrice() {
-            const dateInput = document.getElementById('joinDate');
-            const resultPrice = document.getElementById('resultPrice');
-            const resultNote = document.getElementById('resultNote');
-            const discountBadge = document.getElementById('discountBadge');
-            const fullPrice = PRICES[currentPlan];
-            const halfPrice = Math.round(fullPrice / 2);
-            const vndFull = currentPlan === 'standard' ? '350.000đ' : '1.800.000đ';
-            const vndHalf = currentPlan === 'standard' ? '175.000đ' : '900.000đ';
-            
-            if (!dateInput.value) {
-                resultPrice.textContent = vndFull;
-                resultNote.textContent = 'Chọn ngày để xem chi phí';
-                discountBadge.innerHTML = '';
-                return;
-            }
-
-            const selectedDate = new Date(dateInput.value);
-            const day = selectedDate.getDate();
-
-            const color = currentPlan === 'premium' ? '#7C3AED' : 'var(--primary)';
-            resultPrice.style.color = color;
-
-            if (day < 15) {
-                resultPrice.textContent = vndHalf;
-                resultNote.textContent = `Ngày ${day} → Bỏ lỡ ${15 - day} ngày của chu kỳ trước`;
-                discountBadge.innerHTML = '<span class="discount-badge">-50% Giảm giá vì thiệt ngày</span>';
-            } else {
-                resultPrice.textContent = vndFull;
-                resultNote.textContent = `Ngày ${day} → Đủ 1 tháng (15/${selectedDate.getMonth() + 1} → 15/${selectedDate.getMonth() + 2})`;
-                discountBadge.innerHTML = '<span class="discount-badge full-price">Đủ 1 tháng sử dụng</span>';
             }
         }
 
