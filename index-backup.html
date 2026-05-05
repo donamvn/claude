@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Team - Nhóm chia sẻ gói Team chính chủ từ Anthropic</title>
+    <meta name="description" content="Tham gia nhóm chia sẻ gói Claude Team chính chủ. Mua trực tiếp từ Anthropic. Standard 350k/tháng hoặc Premium 1.800k/tháng. 600+ thành viên.">
+    <link rel="canonical" href="https://claude.donam.vn">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D97706;
+            --primary-dark: #B45309;
+            --secondary: #1E3A5F;
+            --accent: #E85D04;
+            --bg-light: #FFF8F0;
+            --bg-card: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
+            --success: #059669;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D4A6F 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .overview-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .overview-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .overview-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .overview-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Section */
+        .comparison-bg {
+            background: linear-gradient(180deg, #F3F4F6 0%, var(--bg-light) 100%);
+        }
+
+        .comparison-table {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-header > div {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .comparison-header > div:first-child {
+            text-align: left;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row > div {
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-row > div:first-child {
+            justify-content: flex-start;
+            font-weight: 500;
+        }
+
+        .check {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        .highlight-row {
+            background: rgba(217, 119, 6, 0.1);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-badge.pro {
+            background: #E5E7EB;
+            color: var(--text-muted);
+        }
+
+        .plan-badge.team {
+            background: var(--primary);
+            color: white;
+        }
+
+        .plan-badge.premium {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+        }
+
+        /* ===== PRICING TABS ===== */
+        .pricing-tabs-section {
+            background: linear-gradient(180deg, var(--secondary) 0%, #1a3555 100%);
+            padding: 60px 0;
+        }
+
+        .pricing-tabs-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricing-tabs-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .pricing-tabs-title p {
+            color: rgba(255,255,255,0.75);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tab-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            padding: 12px 32px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .tab-btn.active-standard {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .tab-btn.active-premium {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .pricing-cards-wrapper {
+            display: none;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        .pricing-cards-wrapper.active {
+            display: block;
+        }
+
+        .pricing-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .pricing-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-card {
+            border-radius: 24px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.standard {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .pricing-card.premium {
+            background: linear-gradient(135deg, rgba(124,58,237,0.3) 0%, rgba(79,70,229,0.2) 100%);
+            border: 2px solid rgba(124,58,237,0.6);
+        }
+
+        .pricing-card.premium::before {
+            content: '⭐ PHỔ BIẾN NHẤT';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card-header {
+            margin-bottom: 24px;
+        }
+
+        .pricing-plan-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        .pricing-amount span {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .pricing-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pricing-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.4;
+        }
+
+        .pricing-feature-list li .feat-icon {
+            flex-shrink: 0;
+            font-size: 1rem;
+            margin-top: 1px;
+        }
+
+        .pricing-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pricing-cta-btn.std {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .pricing-cta-btn.prem {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: white;
+        }
+
+        .pricing-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        /* Quota comparison table for seats */
+        .quota-table {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .quota-header {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr;
+            background: var(--secondary);
+            color: white;
+            font-weight: 700;
+        }
+
+        .quota-header > div {
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .quota-header > div:first-child {
+            text-align: left;
+        }
+
+        .quota-row {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quota-row:last-child {
+            border-bottom: none;
+        }
+
+        .quota-row > div {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .quota-row > div:first-child {
+            justify-content: flex-start;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .quota-highlight {
+            background: rgba(124,58,237,0.06);
+        }
+
+        .quota-price-row {
+            background: #F9FAFB;
+        }
+
+        .std-col { color: var(--primary); font-weight: 600; }
+        .prem-col { color: #7C3AED; font-weight: 700; }
+
+        /* Process Section */
+        .process-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .process-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--secondary);
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .process-image {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .process-image img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        /* Calculator Section */
+        .calculator-bg {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D4A6F 100%);
+            color: white;
+        }
+
+        .calculator-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .calculator-info p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .discount-note {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .discount-note strong {
+            color: var(--primary);
+        }
+
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--text-dark);
+        }
+
+        .calculator-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .date-input-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .date-input-wrapper label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .date-input-wrapper input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .date-input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(232, 93, 4, 0.1) 100%);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .result-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .result-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .discount-badge.full-price {
+            background: var(--primary);
+        }
+
+        /* QR Section */
+        .qr-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .qr-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qr-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .qr-info p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .qr-steps {
+            margin-top: 30px;
+        }
+
+        .qr-step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .qr-step-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .qr-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .qr-card img {
+            max-width: 280px;
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bank-info {
+            text-align: left;
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .bank-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .bank-info strong {
+            color: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact-bg {
+            background: linear-gradient(180deg, #F3F4F6 0%, var(--bg-light) 100%);
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timeline Chart */
+        .timeline-chart {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            margin-bottom: 40px;
+        }
+
+        .timeline-bar {
+            display: flex;
+            align-items: stretch;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .timeline-segment {
+            flex: 1;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .segment-discount {
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+        }
+
+        .segment-full {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .segment-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .segment-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .segment-price span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .segment-reason {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .timeline-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .marker-dot {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .marker-label {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .marker-note {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .chart-explanation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-explanation {
+                grid-template-columns: 1fr;
+            }
+            .timeline-bar {
+                flex-direction: column;
+            }
+        }
+
+        .explanation-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .explanation-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .explanation-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .explanation-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .explanation-content strong {
+            color: #FCD34D;
+        }
+
+        /* Timeline Visual */
+        .timeline-visual {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .month-block {
+            flex: 1;
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .month-block:last-child {
+            border-right: none;
+        }
+
+        .month-label {
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .day-range {
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .day-range.lost {
+            background: rgba(239, 68, 68, 0.3);
+            color: #FCA5A5;
+        }
+
+        .day-range.discount {
+            background: rgba(5, 150, 105, 0.3);
+            color: #6EE7B7;
+        }
+
+        .day-range.full {
+            background: rgba(217, 119, 6, 0.3);
+            color: #FCD34D;
+        }
+
+        .day-range.active {
+            background: rgba(59, 130, 246, 0.3);
+            color: #93C5FD;
+        }
+
+        .day-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .calculator-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--text-dark);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .calculator-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        /* Contact Section New Styles */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .messenger-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .messenger-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .messenger-logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .messenger-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .messenger-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .messenger-qr {
+            background: #F9FAFB;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .messenger-qr img {
+            max-width: 200px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .messenger-qr p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .messenger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0084FF;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .messenger-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 132, 255, 0.4);
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* ===== RENEWAL ANNOUNCEMENT BANNER ===== */
+        .renewal-banner {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .renewal-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.03) 40px
+            );
+            pointer-events: none;
+        }
+
+        .renewal-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px 20px;
+        }
+
+        .renewal-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .renewal-pulse {
+            width: 12px; height: 12px;
+            background: #FCD34D;
+            border-radius: 50%;
+            animation: rnPulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes rnPulse { 0%,100%{box-shadow:0 0 0 0 rgba(252,211,77,0.7)} 50%{box-shadow:0 0 0 10px rgba(252,211,77,0)} }
+
+        .renewal-title {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .renewal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 680px) {
+            .renewal-body { grid-template-columns: 1fr; }
+        }
+
+        .renewal-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .renewal-card h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 12px;
+            opacity: 0.85;
+        }
+
+        .renewal-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .renewal-price-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .renewal-price-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #FCD34D;
+        }
+
+        .renewal-note {
+            font-size: 0.82rem;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+
+        .renewal-next-price {
+            color: #FCA5A5;
+            font-weight: 600;
+        }
+
+        .renewal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .renewal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .renewal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .renewal-btn.zalo {
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            color: white;
+        }
+
+        .renewal-btn.messenger {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .renewal-footer-note {
+            text-align: center;
+            font-size: 0.82rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .renewal-warn-box {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .renewal-warn-box .warn-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== ZALO CARD ===== */
+        .zalo-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #0068FF;
+        }
+
+        .zalo-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .zalo-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .zalo-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .zalo-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .zalo-benefits {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .zalo-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .zalo-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .zalo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0068FF 0%, #0052CC 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .zalo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 104, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+
+            .comparison-row > div {
+                padding: 14px 12px;
+                font-size: 0.9rem;
+            }
+
+            .stats {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <span class="badge">👥 Nhóm chia sẻ chính thức</span>
+                <h1>Cùng dùng <span class="highlight">Claude Team</span><br>Chia sẻ chi phí hợp lý</h1>
+                <p class="subtitle">Tham gia nhóm sử dụng gói Claude Team chính chủ - Mua trực tiếp từ Anthropic với hóa đơn. Cùng chia sẻ chi phí, tiết kiệm hơn so với mua riêng.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+  <a href="#pricing" class="cta-button">Standard - 350.000đ/tháng</a>
+  <a href="#pricing" class="cta-button" style="background:linear-gradient(135deg,#7C3AED 0%,#4F46E5 100%);">Premium - 1.800.000đ/tháng</a>
+</div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">600+</div>
+                        <div class="stat-label">Thành viên trong nhóm</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Tháng hoạt động ổn định</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="font-size:1.6rem;">350K</div>
+                        <div class="stat-label">Standard/tháng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color:#A78BFA;font-size:1.6rem;">1.8M</div>
+                        <div class="stat-label">Premium/tháng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== RENEWAL ANNOUNCEMENT BANNER ===== -->
+    <section class="renewal-banner" id="renewal-notice">
+        <div class="renewal-inner">
+            <div class="renewal-header">
+                <div class="renewal-pulse"></div>
+                <div class="renewal-title">📢 THÔNG BÁO GIA HẠN — Tháng 5/2026</div>
+                <div class="renewal-pulse"></div>
+            </div>
+
+            <div class="renewal-warn-box">
+                <div class="warn-icon">⏰</div>
+                <div>
+                    <strong>Từ ngày mai (1/5) áp dụng giá mới!</strong> Chu kỳ gia hạn tháng 5 (15/5 → 15/6) sẽ tính theo bảng giá mới bên dưới. Nếu có nhu cầu dùng tiếp xin liên hệ lại ạ.
+                    Nếu không gia hạn, đến lịch sẽ set về <strong>free account</strong> (không mất nội dung chat),
+                    khoảng 15 – 30 ngày sau đó sẽ bị <strong>remove khỏi team</strong>.
+                    <br><em style="opacity:0.75;">Nếu các bác đã gia hạn xin bỏ qua tin nhắn này ạ. Thank you!</em>
+                </div>
+            </div>
+
+            <div class="renewal-body">
+                <div class="renewal-card">
+                    <h4>💰 Giá tháng trước (tham khảo)</h4>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Standard:</span>
+                        <span class="renewal-price-value">315.000đ</span>
+                    </div>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Premium:</span>
+                        <span class="renewal-price-value">1.555.000đ</span>
+                    </div>
+                </div>
+                <div class="renewal-card" style="border-color: rgba(252,165,165,0.4);">
+                    <h4>📈 Giá mới — áp dụng từ 1/5/2026</h4>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Standard:</span>
+                        <span class="renewal-next-price" style="font-size:1.5rem;font-weight:800;">350.000đ</span>
+                    </div>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Premium:</span>
+                        <span class="renewal-next-price" style="font-size:1.5rem;font-weight:800;">1.800.000đ</span>
+                    </div>
+                    <p class="renewal-note">Do team tăng nhanh (sang tháng thứ 4 với 600+ mem) nên ngoài thuế lại bị tăng phí quy đổi ngoại tệ.</p>
+                </div>
+                <div class="renewal-card" style="border-color: rgba(196,181,253,0.5); background: linear-gradient(135deg, rgba(124,58,237,0.18), rgba(79,70,229,0.18));">
+                    <h4>👑 MỚI — Premium VIP (+$10/tháng)</h4>
+                    <div class="renewal-price-row">
+                        <span class="renewal-price-label">Premium VIP:</span>
+                        <span class="renewal-next-price" style="font-size:1.5rem;font-weight:800;color:#C4B5FD;">Premium + $10</span>
+                    </div>
+                    <ul style="margin:10px 0 0 0; padding-left:18px; font-size:0.9rem; line-height:1.6; opacity:0.95;">
+                        <li>🌐 <strong>Custom domain</strong> (thay vì chỉ Gmail như thường)</li>
+                        <li>📅 Gia hạn theo <strong>năm</strong> — miễn phí $10 duy trì team mỗi tháng</li>
+                        <li>🛡️ Độ ổn định <strong>tối đa</strong> — rủi ro đổi team gần như bằng 0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="renewal-actions">
+                <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" class="renewal-btn zalo">
+                    💬 Join nhóm Zalo để nhận thông báo
+                </a>
+                <a href="#contact" class="renewal-btn messenger">
+                    📩 Liên hệ gia hạn ngay
+                </a>
+            </div>
+
+            <p class="renewal-footer-note">
+                Xin bạn dành chút thời gian join nhóm Zalo để tiện thông báo các lần gia hạn tiếp theo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tại sao tham gia nhóm chia sẻ?</h2>
+                <p>Gói Team chính chủ từ Anthropic - Cùng chia sẻ, cùng tiết kiệm</p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">💰</div>
+                    <h3>Chia sẻ chi phí hợp lý</h3>
+                    <p>Gói Team từ Anthropic dành cho nhóm. Cùng chia sẻ chi phí, mỗi người chỉ 350.000đ/tháng thay vì tự mua riêng.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">🔐</div>
+                    <h3>Gói chính chủ có hóa đơn</h3>
+                    <p>Mua trực tiếp từ Anthropic với hóa đơn chính thức. Bạn được mời vào Team bằng Gmail cá nhân của mình.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">⚡</div>
+                    <h3>Quota riêng biệt</h3>
+                    <p>Mỗi thành viên có quota độc lập, không ảnh hưởng đến người khác. Limit per-member hoàn toàn độc lập.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">📈</div>
+                    <h3>Hạn mức cao hơn</h3>
+                    <p>Standard seat: 1.25x so với Pro plan. Weekly limit reset 7 ngày, sử dụng thoải mái.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">👥</div>
+                    <h3>Nhóm 600+ thành viên</h3>
+                    <p>Claude Team được thiết kế cho nhóm/tổ chức. Tham gia cùng 600+ thành viên đang sử dụng ổn định.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">🔄</div>
+                    <h3>Gia hạn mùng 1 & ngày 15</h3>
+                    <p>Chu kỳ gia hạn cố định <strong>vào mùng 1 và ngày 15</strong> hàng tháng. Các thời gian khác vui lòng liên hệ thêm.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">🛡️</div>
+                    <h3>Bảo lưu lịch sử chat</h3>
+                    <p>Khi ngừng gia hạn, tài khoản vẫn được giữ trong Team một thời gian để <strong>không mất lịch sử chat</strong>, đảm bảo công việc không bị ảnh hưởng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING TABS SECTION ===== -->
+    <section id="pricing" class="pricing-tabs-section">
+        <div class="container">
+            <div class="pricing-tabs-title">
+                <h2>Chọn gói phù hợp với bạn</h2>
+                <p>Standard cho người dùng thông thường · Premium cho người dùng nặng cần quota cao hơn</p>
+            </div>
+
+            <!-- Tab switcher -->
+            <div class="tab-switcher">
+                <button class="tab-btn active-standard" id="tabStd" onclick="showTab('standard')">⚡ Standard — 350.000đ/tháng</button>
+                <button class="tab-btn" id="tabPrem" onclick="showTab('premium')">💎 Premium — 1.800.000đ/tháng</button>
+            </div>
+
+            <!-- Standard content -->
+            <div class="pricing-cards-wrapper active" id="panelStandard">
+                <div class="pricing-compare">
+                    <div class="pricing-card standard">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name">Standard Seat</div>
+                            <div class="pricing-amount">350.000đ <span>/tháng</span></div>
+                        </div>
+                        <ul class="pricing-feature-list">
+                            <li><span class="feat-icon">📊</span> <span><strong>1.25x</strong> so với Pro plan — tất cả models</span></li>
+                            <li><span class="feat-icon">🔄</span> <span>1 weekly limit chung · reset mỗi 7 ngày</span></li>
+                            <li><span class="feat-icon">🔐</span> <span>Quota riêng biệt, không chia sẻ pool</span></li>
+                            <li><span class="feat-icon">📧</span> <span>Gmail cá nhân được mời vào Team</span></li>
+                            <li><span class="feat-icon">✅</span> <span>Gói chính chủ có hóa đơn Anthropic</span></li>
+                            <li><span class="feat-icon">👥</span> <span>Hỗ trợ cộng đồng 600+ thành viên</span></li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta-btn std">Đăng ký Standard ngay</a>
+                    </div>
+
+                    <div class="pricing-card standard" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.1);">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:rgba(255,255,255,0.5);">Phù hợp nếu bạn…</div>
+                        </div>
+                        <ul class="pricing-feature-list" style="margin-bottom:0;">
+                            <li><span class="feat-icon">✔️</span> <span>Dùng Claude thường xuyên cho công việc, học tập</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Muốn tiết kiệm so với Pro ($20/tháng)</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Cần quota ổn định, không bị ảnh hưởng bởi người khác</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Mới bắt đầu tìm hiểu Claude Team</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium content -->
+            <div class="pricing-cards-wrapper" id="panelPremium">
+                <div class="pricing-compare">
+                    <div class="pricing-card premium">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name">Premium Seat</div>
+                            <div class="pricing-amount">1.800.000đ <span>/tháng</span></div>
+                        </div>
+                        <ul class="pricing-feature-list">
+                            <li><span class="feat-icon">🚀</span> <span><strong>6.25x</strong> so với Pro plan — gấp 5x so với Standard!</span></li>
+                            <li><span class="feat-icon">⚡</span> <span><strong>2 weekly limits</strong>: chung tất cả models + riêng Claude Sonnet</span></li>
+                            <li><span class="feat-icon">🔄</span> <span>Reset tuần (7 ngày) — cả 2 limits đều reset riêng biệt</span></li>
+                            <li><span class="feat-icon">🔐</span> <span>Quota hoàn toàn độc lập per-member, không chia pool</span></li>
+                            <li><span class="feat-icon">📧</span> <span>Gmail cá nhân được mời vào Team</span></li>
+                            <li><span class="feat-icon">✅</span> <span>Gói chính chủ có hóa đơn Anthropic</span></li>
+                            <li><span class="feat-icon">💬</span> <span>Hỗ trợ ưu tiên từ admin</span></li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta-btn prem">Đăng ký Premium ngay</a>
+                    </div>
+
+                    <div class="pricing-card" style="background:rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.3);">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:rgba(255,255,255,0.6);">Phù hợp nếu bạn…</div>
+                        </div>
+                        <ul class="pricing-feature-list" style="margin-bottom:0;">
+                            <li><span class="feat-icon">✔️</span> <span>Dùng Claude rất nhiều, thường xuyên hit limit Standard</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Cần quota cao cho Claude Sonnet (model mạnh nhất)</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Developer, researcher, content creator chuyên nghiệp</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Muốn 6.25x quota so với Pro mà không cần API riêng</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Premium VIP add-on -->
+                <div class="pricing-compare" style="margin-top:32px;">
+                    <div class="pricing-card premium" style="background:linear-gradient(135deg, rgba(124,58,237,0.25) 0%, rgba(79,70,229,0.25) 100%); border:2px solid #C4B5FD;">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:#C4B5FD;">👑 Premium VIP <span style="font-size:0.7rem; background:#C4B5FD; color:#4F46E5; padding:3px 10px; border-radius:12px; margin-left:8px; vertical-align:middle;">MỚI</span></div>
+                            <div class="pricing-amount">1.800.000đ + $10 <span>/tháng</span></div>
+                        </div>
+                        <ul class="pricing-feature-list">
+                            <li><span class="feat-icon">🌐</span> <span><strong>Custom domain</strong> — dùng email theo domain riêng của bạn (thay vì chỉ Gmail)</span></li>
+                            <li><span class="feat-icon">📅</span> <span>Hỗ trợ <strong>gia hạn theo năm</strong> — không mất phí $10 duy trì team mỗi tháng</span></li>
+                            <li><span class="feat-icon">🛡️</span> <span><strong>Độ ổn định tối đa</strong> — rủi ro đổi team gần như bằng 0</span></li>
+                            <li><span class="feat-icon">🚀</span> <span>Đầy đủ quyền lợi của Premium Seat (6.25x quota)</span></li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta-btn prem">Đăng ký Premium VIP</a>
+                    </div>
+
+                    <div class="pricing-card" style="background:rgba(255,255,255,0.04); border-color:rgba(196,181,253,0.2);">
+                        <div class="pricing-card-header">
+                            <div class="pricing-plan-name" style="color:rgba(255,255,255,0.6);">Phù hợp nếu bạn…</div>
+                        </div>
+                        <ul class="pricing-feature-list" style="margin-bottom:0;">
+                            <li><span class="feat-icon">✔️</span> <span>Cần email theo domain công ty / cá nhân</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Muốn cam kết dài hạn theo năm, không lo gia hạn hàng tháng</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Cần độ ổn định cao nhất, không muốn đổi team</span></li>
+                            <li><span class="feat-icon">✔️</span> <span>Sẵn sàng trả thêm $10/tháng cho đặc quyền VIP</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quota comparison table -->
+            <div style="margin-top:48px;">
+                <h3 style="text-align:center;color:rgba(255,255,255,0.9);font-size:1.2rem;font-weight:600;margin-bottom:24px;">Chi tiết quota theo loại Seat</h3>
+                <div class="quota-table">
+                    <div class="quota-header">
+                        <div>Loại Seat</div>
+                        <div>Standard<br><small style="font-weight:400;opacity:.8;">350.000đ/tháng</small></div>
+                        <div style="color:#C4B5FD;">Premium<br><small style="font-weight:400;opacity:.8;">1.800.000đ/tháng</small></div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Quota so với Pro plan</div>
+                        <div class="std-col">1.25x</div>
+                        <div class="prem-col">6.25x 🚀</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Weekly limit models chung</div>
+                        <div class="std-col">✓ 1 limit</div>
+                        <div class="prem-col">✓ 1 limit</div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Weekly limit riêng Claude Sonnet</div>
+                        <div style="color:var(--text-muted);">—</div>
+                        <div class="prem-col">✓ Thêm 1 limit</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Reset chu kỳ</div>
+                        <div class="std-col">7 ngày</div>
+                        <div class="prem-col">7 ngày</div>
+                    </div>
+                    <div class="quota-row quota-highlight">
+                        <div>Quota độc lập per-member</div>
+                        <div class="std-col">✓</div>
+                        <div class="prem-col">✓</div>
+                    </div>
+                    <div class="quota-row">
+                        <div>Không có pool chung</div>
+                        <div class="std-col">✓</div>
+                        <div class="prem-col">✓</div>
+                    </div>
+                    <div class="quota-row quota-price-row">
+                        <div style="font-weight:700;">Giá/tháng</div>
+                        <div class="std-col" style="font-size:1.1rem;">350.000đ</div>
+                        <div class="prem-col" style="font-size:1.1rem;">1.800.000đ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Renewal Policy Section -->
+    <section id="renewal-policy" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 40px 0;">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; text-align: center;">
+                <div style="font-size: 3rem;">⏰</div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 8px;">
+                        Ngày gia hạn cố định: <span style="color: var(--primary);">mùng 1</span> và <span style="color: var(--primary);">ngày 15</span> hàng tháng
+                    </h3>
+                    <p style="color: var(--text-muted); max-width: 640px;">
+                        Team chỉ nhận gia hạn vào <strong>mùng 1</strong> và <strong>ngày 15</strong> hàng tháng. Các thời gian khác vui lòng liên hệ thêm để được hỗ trợ. Hãy gia hạn đúng hạn để không bị gián đoạn dịch vụ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>So sánh gói Claude (Pro vs Standard vs Premium)</h2>
+                <p>Xem chi tiết những gì bạn nhận được với từng gói trong nhóm</p>
+            </div>
+            
+            <div class="comparison-table" style="max-width:1000px;">
+                <div class="comparison-header" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Tính năng</div>
+                    <div><span class="plan-badge pro">Pro</span></div>
+                    <div><span class="plan-badge team">Standard</span></div>
+                    <div><span class="plan-badge premium">Premium</span></div>
+                </div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Quota so với Pro</div>
+                    <div>1x</div>
+                    <div><strong>1.25x</strong></div>
+                    <div><strong style="color:#7C3AED;">6.25x 🚀</strong></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Weekly limit (models chung)</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Weekly limit riêng Claude Sonnet</div>
+                    <div>—</div>
+                    <div>—</div>
+                    <div><span class="check" style="color:#7C3AED;">✓</span></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Quota độc lập (per-member)</div>
+                    <div>—</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Truy cập tất cả models</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Reset hàng tuần</div>
+                    <div>7 ngày</div>
+                    <div>7 ngày</div>
+                    <div>7 ngày</div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Sử dụng Gmail cá nhân</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div>Hỗ trợ cộng đồng</div>
+                    <div>—</div>
+                    <div><span class="check">✓</span></div>
+                    <div><span class="check">✓</span></div>
+                </div>
+                <div class="comparison-row highlight-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+                    <div><strong>Chi phí/tháng</strong></div>
+                    <div>$20</div>
+                    <div><strong style="color: var(--primary);">350K</strong></div>
+                    <div><strong style="color:#7C3AED;">1.8M</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quy trình kích hoạt 3 bước</h2>
+                <p>Nhanh chóng và đơn giản, chỉ mất vài phút</p>
+            </div>
+            
+            <div class="process-wrapper">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Thanh toán</h4>
+                            <p>Quét mã QR hoặc chuyển khoản theo thông tin bên dưới. Gửi ảnh biên lai kèm email Gmail của bạn.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Nhận mail mời</h4>
+                            <p>Bạn sẽ nhận được email mời tham gia Team từ Claude. Nếu link hết hạn cũng không sao, liên hệ để được gửi lại.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Kiểm tra Role Team</h4>
+                            <p>Đăng nhập Claude, bạn sẽ thấy Role "Team" hiển thị ngay phía trên phần tài khoản cá nhân. Hoàn tất!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-image">
+                    <div style="background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); border-radius: 16px; padding: 40px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">👤</div>
+                            <div>
+                                <div style="font-weight: 600; color: var(--secondary);">Your Account</div>
+                                <div style="font-size: 0.9rem; color: var(--text-muted);">example@gmail.com</div>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 12px; border: 2px solid var(--primary);">
+                            <span style="background: var(--success); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Team ✓</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Role Team đã được kích hoạt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Timeline Section -->
+    <section id="pricing-timeline" class="calculator-bg">
+        <div class="container">
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">Tham gia giữa chu kỳ?</h2>
+                <p style="color: rgba(255,255,255,0.8);">Ngày gia hạn cố định: mùng 1 và ngày 15 hàng tháng</p>
+            </div>
+
+            <div style="max-width:720px; margin: 0 auto; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 40px 32px; text-align: center; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 16px;">📞</div>
+                <h3 style="color: white; font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;">
+                    Nếu bạn muốn tham gia vào thời điểm khác mùng 1 hoặc ngày 15
+                </h3>
+                <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+                    Vui lòng <strong>liên hệ</strong> để được tư vấn về chi phí và phương án tham gia phù hợp với thời điểm bạn mong muốn.
+                </p>
+                <a href="#contact" class="renewal-btn messenger" style="display:inline-flex;">
+                    📩 Liên hệ để biết thêm thông tin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Liên hệ hỗ trợ</h2>
+                <p>Có thắc mắc? Liên hệ ngay qua Messenger để được tư vấn</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-main">
+                    <div class="messenger-card">
+                        <div class="messenger-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" class="messenger-logo">
+                            <div>
+                                <h3>Nhắn tin qua Messenger</h3>
+                                <p>Phản hồi nhanh trong vòng 24h</p>
+                            </div>
+                        </div>
+                        <div class="messenger-qr">
+<img src="messenger-qr.jpg" alt="QR Messenger" id="messengerQR">
+                            <p>Quét mã QR để nhắn tin</p>
+                        </div>
+                        <a href="https://www.facebook.com/donamthuongtin/" target="_blank" class="messenger-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.936 1.444 5.544 3.7 7.254v3.503l3.258-1.79c.893.252 1.837.39 2.842.39 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.047 12.434l-2.53-2.71-4.942 2.71 5.425-5.79 2.593 2.71 4.879-2.71-5.425 5.79z"/>
+                            </svg>
+                            Nhắn tin Facebook
+                        </a>
+                    </div>
+
+                    <!-- Zalo Group Card -->
+                    <div class="zalo-card" style="margin-top: 24px;">
+                        <div class="zalo-header">
+                            <div class="zalo-logo">Zalo</div>
+                            <div>
+                                <h3>Nhóm Zalo — Claude Team</h3>
+                                <p>Nhận thông báo gia hạn nhanh nhất</p>
+                            </div>
+                        </div>
+                        <ul class="zalo-benefits" style="list-style:none;padding:0;margin:0 0 20px 0;">
+                            <li>📢 Thông báo gia hạn hàng tháng</li>
+                            <li>💬 Trao đổi, hỗ trợ nhanh</li>
+                            <li>📋 Cập nhật giá & chính sách mới</li>
+                            <li>👥 Kết nối với cộng đồng thành viên</li>
+                        </ul>
+                        <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" class="zalo-btn">
+                            💬 Join nhóm Zalo ngay
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">👥</div>
+                        <h4>Nhóm 600+ thành viên</h4>
+                        <p>Tham gia nhóm chia sẻ, trao đổi kinh nghiệm sử dụng Claude Team</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⚡</div>
+                        <h4>Phản hồi nhanh</h4>
+                        <p>Hỗ trợ 24/7, xử lý yêu cầu trong vòng vài giờ</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔒</div>
+                        <h4>Hoạt động ổn định</h4>
+                        <p>Sang tháng thứ 4 hoạt động, 600+ thành viên sử dụng ổn định</p>
+                    </div>
+                    <div class="info-card" style="border: 2px solid #0068FF;">
+                        <div class="info-icon">💬</div>
+                        <div>
+                            <h4 style="color: #0068FF;">Nhóm Zalo</h4>
+                            <p>Join nhóm Zalo để nhận thông báo gia hạn và hỗ trợ nhanh nhất</p>
+                            <a href="https://zalo.me/g/ftab77yqfuxag8v6061w" target="_blank" style="color: #0068FF; font-weight: 600; font-size: 0.85rem; display: inline-block; margin-top: 6px;">→ Tham gia ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Policy Section 4/4/2026 -->
+    <section id="policy-update" style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 60%, #1E3A5F 100%); color: white; padding: 70px 0;">
+        <div class="container">
+            <!-- Header -->
+            <div style="text-align:center; margin-bottom:48px;">
+                <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.5); border-radius:50px; padding:8px 20px; margin-bottom:20px;">
+                    <span style="width:8px;height:8px;background:#EF4444;border-radius:50%;display:inline-block;animation:pulse 1.5s infinite;"></span>
+                    <span style="font-size:0.85rem; font-weight:600; color:#FCA5A5;">CẬP NHẬT CHÍNH SÁCH MỚI — Có hiệu lực từ 4/4/2026</span>
+                </div>
+                <h2 style="font-size:clamp(1.5rem,4vw,2.2rem); font-weight:800; margin-bottom:14px; line-height:1.3;">
+                    📢 Anthropic thay đổi chính sách sử dụng<br>
+                    <span style="color:#A5B4FC;">Claude qua công cụ bên thứ ba</span>
+                </h2>
+                <p style="color:rgba(255,255,255,0.75); max-width:680px; margin:0 auto; font-size:1.05rem; line-height:1.7;">
+                    Từ <strong style="color:#FCD34D;">3 PM ET ngày 4/4/2026</strong> (~4h sáng ngày 5/4 giờ VN), Anthropic chính thức tách biệt việc sử dụng quota subscription Claude khỏi các công cụ bên thứ ba. Đây là điều <em>tất cả thành viên nhóm cần nắm rõ.</em>
+                </p>
+            </div>
+
+            <!-- Main alert box -->
+            <div style="background:rgba(239,68,68,0.15); border:2px solid rgba(239,68,68,0.4); border-radius:20px; padding:28px 32px; max-width:900px; margin:0 auto 40px; display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+                <div style="font-size:2.5rem; flex-shrink:0;">🚨</div>
+                <div style="flex:1; min-width:260px;">
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px; color:#FCA5A5;">Điều quan trọng nhất bạn cần biết</h3>
+                    <p style="opacity:0.95; line-height:1.8; font-size:0.98rem;">
+                        <strong>Không phải "cấm hoàn toàn Claude"</strong> — Anthropic chỉ <strong style="color:#FCD34D;">tách quyền dùng subscription Claude</strong> khỏi OpenClaw và các IDE/tool tương tự. Bạn vẫn dùng Claude <strong>trên web chính thức (claude.ai)</strong> hoàn toàn bình thường. Chỉ là quota subscription <em>không còn được tính cho OpenClaw</em> như trước nữa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3-column grid -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1000px; margin:0 auto 48px;">
+                <!-- Col 1: What changed -->
+                <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:20px; padding:28px;">
+                    <div style="font-size:2rem; margin-bottom:14px;">🔄</div>
+                    <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:14px; color:#C7D2FE;">Điều gì thay đổi?</h3>
+                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.9rem; opacity:0.9; line-height:1.6;">
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#A5B4FC; flex-shrink:0;">▸</span><span>Người dùng gói Claude tiêu chuẩn <strong>sẽ không còn</strong> được tính usage của <strong>OpenClaw</strong> vào quota subscription nữa</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#A5B4FC; flex-shrink:0;">▸</span><span>Muốn dùng OpenClaw → phải mua <strong>pay-as-you-go</strong> hoặc <strong>usage bundle riêng</strong></span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#A5B4FC; flex-shrink:0;">▸</span><span>Ảnh hưởng đến tất cả các công cụ bên thứ ba dùng OAuth kết nối tài khoản Claude</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span>Dùng <strong>claude.ai trực tiếp</strong> vẫn hoạt động bình thường, <em>không bị ảnh hưởng</em></span></li>
+                    </ul>
+                </div>
+                <!-- Col 2: Impact -->
+                <div style="background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); border-radius:20px; padding:28px;">
+                    <div style="font-size:2rem; margin-bottom:14px;">⚠️</div>
+                    <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:14px; color:#FCD34D;">Tác động thực tế</h3>
+                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.9rem; opacity:0.9; line-height:1.6;">
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#FCD34D; flex-shrink:0;">▸</span><span>Nếu bạn đang dùng <strong>OpenClaw qua tài khoản Claude</strong>, sẽ bị yêu cầu chuyển sang tính phí riêng</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#FCD34D; flex-shrink:0;">▸</span><span>Chi phí dùng OpenClaw có thể tăng khoảng <strong>30–50%</strong> so với trước</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#FCD34D; flex-shrink:0;">▸</span><span>Người dùng dùng Claude <strong>thuần trên web/app</strong> → <em>không bị ảnh hưởng gì</em></span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span>Thành viên nhóm chia sẻ này dùng Claude Team trên web → <strong>an toàn, không ảnh hưởng</strong></span></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Solutions -->
+                <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:20px; padding:28px;">
+                    <div style="font-size:2rem; margin-bottom:14px;">💡</div>
+                    <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:14px; color:#6EE7B7;">Giải pháp thay thế</h3>
+                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.9rem; opacity:0.9; line-height:1.6;">
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span><strong>Dùng claude.ai trực tiếp</strong> — không qua OpenClaw, quota không bị ảnh hưởng</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span><strong>Cursor AI, Claude.dev</strong> — các công cụ IDE không đi qua OpenClaw</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span><strong>Usage bundle riêng</strong> (~$20–50/tháng) nếu bạn vẫn muốn dùng OpenClaw</span></li>
+                        <li style="display:flex; gap:8px; align-items:flex-start;"><span style="color:#6EE7B7; flex-shrink:0;">✓</span><span><strong>Ollama + Llama 3</strong> — chạy local, hoàn toàn miễn phí cho nhu cầu cơ bản</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Teacher note box -->
+            <div style="max-width:900px; margin:0 auto; background:rgba(99,102,241,0.2); border:1.5px solid rgba(99,102,241,0.5); border-radius:20px; padding:28px 32px;">
+                <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+                    <div style="font-size:2.5rem; flex-shrink:0;">👨‍🏫</div>
+                    <div style="flex:1; min-width:260px;">
+                        <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; color:#C7D2FE;">Góc nhìn từ người dùng Claude lâu năm</h3>
+                        <p style="opacity:0.95; line-height:1.8; font-size:0.93rem; margin-bottom:14px;">
+                            Theo tôi, đây là bước đi <strong>bình thường và hợp lý</strong> từ phía Anthropic — tương tự như khi Netflix tách gói chia sẻ tài khoản. Anthropic muốn <strong>kiểm soát tốt hơn</strong> luồng dùng quota thông qua bên thứ ba vì nó tạo ra tải không tính trước được cho hệ thống của họ.
+                        </p>
+                        <p style="opacity:0.95; line-height:1.8; font-size:0.93rem; margin-bottom:14px;">
+                            <strong style="color:#FCD34D;">Quan trọng với thành viên nhóm này:</strong> Nhóm chúng ta dùng Claude Team <em>trực tiếp trên claude.ai</em>, <strong>không qua OpenClaw</strong>. Vì vậy, chính sách này <strong>KHÔNG ảnh hưởng</strong> đến quyền lợi của các bạn trong nhóm. Quota Standard (1.25x) và Premium (6.25x) của bạn vẫn hoạt động bình thường.
+                        </p>
+                        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
+                            <div style="display:flex; align-items:center; gap:8px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); border-radius:10px; padding:10px 16px; font-size:0.85rem;">
+                                <span>✅</span><span><strong>Nhóm này:</strong> Dùng web → An toàn 100%</span>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:8px; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); border-radius:10px; padding:10px 16px; font-size:0.85rem;">
+                                <span>❌</span><span><strong>Bị ảnh hưởng:</strong> Ai dùng OpenClaw qua OAuth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick check CTA -->
+            <div style="text-align:center; margin-top:36px;">
+                <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; margin-bottom:16px;">Cần tư vấn hoặc có thắc mắc về chính sách mới?</p>
+                <a href="#contact" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#6366F1 0%,#4F46E5 100%); color:white; padding:14px 32px; border-radius:50px; font-weight:700; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 30px rgba(99,102,241,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+                    💬 Liên hệ admin để được hỗ trợ
+                </a>
+            </div>
+        </div>
+    </section>
+    <style>
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    </style>
+
+    <!-- Legal Notice Section -->
+    <section id="legal-notice" style="background: linear-gradient(135deg, #064E3B 0%, #065F46 100%); color: white; padding: 50px 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+                    <div style="font-size: 3rem;">⚖️</div>
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Về tính pháp lý của nhóm chia sẻ</h3>
+                        <p style="opacity: 0.95; margin-bottom: 16px; line-height: 1.7;">
+                            <strong>Claude Team</strong> là gói dịch vụ chính thức của Anthropic được <strong>thiết kế dành cho nhóm/tổ chức</strong>. 
+                            Admin có quyền mời thành viên tham gia Team - đây là tính năng chính thức, không phải "chia sẻ tài khoản" hay "kinh doanh tài khoản".
+                        </p>
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                            <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>📋 Dự thảo Nghị định mới (dự kiến 1/7/2026):</strong></p>
+                            <p style="font-size: 0.85rem; opacity: 0.9; font-style: italic;">
+                                "Phạt 25-50 triệu đồng với hành vi <u>kinh doanh</u> tài khoản dùng chung <u>trái quy định của nhà cung cấp</u>."
+                            </p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div style="background: rgba(16, 185, 129, 0.2); border-radius: 8px; padding: 12px;">
+                                <p style="font-size: 0.85rem;"><strong>✅ Nhóm này KHÔNG VI PHẠM vì:</strong></p>
+                                <ul style="font-size: 0.8rem; opacity: 0.9; padding-left: 16px; margin-top: 8px; line-height: 1.6;">
+                                    <li>Gói Team cho phép mời thành viên</li>
+                                    <li>Mua chính chủ từ Anthropic</li>
+                                    <li>Chia sẻ chi phí, không kinh doanh</li>
+                                    <li>Tuân thủ TOS của nhà cung cấp</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(239, 68, 68, 0.2); border-radius: 8px; padding: 12px;">
+                                <p style="font-size: 0.85rem;"><strong>❌ Vi phạm nếu:</strong></p>
+                                <ul style="font-size: 0.8rem; opacity: 0.9; padding-left: 16px; margin-top: 8px; line-height: 1.6;">
+                                    <li>Bán account/password</li>
+                                    <li>Chia sẻ trái quy định TOS</li>
+                                    <li>Kinh doanh mục đích lợi nhuận</li>
+                                    <li>Không có hóa đơn chính chủ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Policy Section -->
+    <section id="terms" style="background: #1F2937; color: white; padding: 60px 0;">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 40px;">
+                <h2 style="color: white;">⚠️ Quy định sử dụng nhóm</h2>
+                <p style="color: rgba(255,255,255,0.7);">Vui lòng đọc kỹ trước khi tham gia nhóm</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <!-- Non-refund Policy -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; border-left: 4px solid #EF4444;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 1.5rem;">🚫</span>
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Chính sách không hoàn tiền</h3>
+                    </div>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px;">
+                        Theo chính sách của Anthropic, <strong>không hỗ trợ hoàn tiền</strong> sau khi đã thanh toán và kích hoạt dịch vụ.
+                    </p>
+                    <div style="background: rgba(239, 68, 68, 0.2); border-radius: 8px; padding: 12px; font-size: 0.85rem;">
+                        <p style="font-style: italic; opacity: 0.9;">
+                            "… fees are non-refundable except as required by law or as explicitly set forth in these Terms."
+                        </p>
+                        <a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" style="color: #FCA5A5; font-size: 0.8rem; display: inline-block; margin-top: 8px;">
+                            → Anthropic Consumer Terms
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- TOS Compliance -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; border-left: 4px solid #10B981;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 1.5rem;">✅</span>
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Tuân thủ điều khoản Anthropic</h3>
+                    </div>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 12px;">
+                        Gói Team <strong>chính chủ có hóa đơn</strong> từ Anthropic. Thành viên cam kết:
+                    </p>
+                    <ul style="font-size: 0.9rem; opacity: 0.85; padding-left: 20px; line-height: 1.8;">
+                        <li>Sử dụng đúng mục đích cá nhân/công việc</li>
+                        <li>Không vi phạm <a href="https://www.anthropic.com/legal/aup" target="_blank" style="color: #6EE7B7;">Acceptable Use Policy</a></li>
+                        <li>Không chia sẻ thông tin đăng nhập cho người ngoài nhóm</li>
+                    </ul>
+                </div>
+                
+                <!-- Warning -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; border-left: 4px solid #F59E0B;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 1.5rem;">🚨</span>
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Cảnh báo vi phạm</h3>
+                    </div>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 12px;">
+                        <strong>NGHIÊM CẤM</strong> sử dụng dịch vụ cho các mục đích:
+                    </p>
+                    <ul style="font-size: 0.9rem; opacity: 0.85; padding-left: 20px; line-height: 1.8;">
+                        <li>Các nền tảng API không chính thức (OpenClaw, ...)</li>
+                        <li>Tạo nội dung vi phạm pháp luật</li>
+                        <li>Spam, lừa đảo, phát tán mã độc</li>
+                        <li>Bất kỳ hành vi nào vi phạm TOS của Anthropic</li>
+                    </ul>
+                    <div style="background: rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 12px; margin-top: 16px;">
+                        <p style="font-size: 0.85rem; color: #FCA5A5; margin: 0;">
+                            ⚠️ <strong>Lưu ý quan trọng:</strong> Vi phạm của 1 thành viên có thể ảnh hưởng đến TOÀN BỘ TEAM (theo báo cáo từ người dùng). Thành viên vi phạm sẽ bị xóa khỏi Team mà không hoàn tiền.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Stable Usage -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; border-left: 4px solid #3B82F6;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 1.5rem;">📊</span>
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Nhóm ổn định sang tháng thứ 4</h3>
+                    </div>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 12px;">
+                        Nhóm đã hoạt động <strong>sang tháng thứ 4</strong> với 600+ thành viên vì:
+                    </p>
+                    <ul style="font-size: 0.9rem; opacity: 0.85; padding-left: 20px; line-height: 1.8;">
+                        <li>✅ Gói Team chính chủ có hóa đơn từ Anthropic</li>
+                        <li>✅ Tuân thủ đầy đủ TOS và Usage Policy</li>
+                        <li>✅ Sàng lọc thành viên kỹ càng</li>
+                        <li>✅ Đây là nhóm chia sẻ, không kinh doanh</li>
+                    </ul>
+                    <p style="font-size: 0.85rem; color: #93C5FD; margin-top: 12px;">
+                        📝 Sử dụng đúng mục đích = Yên tâm dùng lâu dài!
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Confirmation checkbox style note -->
+            <div style="margin-top: 40px; text-align: center; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
+                <p style="font-size: 0.95rem; opacity: 0.9;">
+                    📝 Khi tham gia nhóm, bạn xác nhận đã đọc và đồng ý với các quy định trên và 
+                    <a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" style="color: var(--primary);">Anthropic Consumer Terms</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+<p>© 2026 Claude Team Group by Do Hoai Nam. All rights reserved.</p>
+            <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 8px;">Nhóm chia sẻ gói Team chính chủ từ Anthropic - Không phải dịch vụ kinh doanh tài khoản</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tab) {
+            document.getElementById('panelStandard').classList.toggle('active', tab === 'standard');
+            document.getElementById('panelPremium').classList.toggle('active', tab === 'premium');
+            const btnStd = document.getElementById('tabStd');
+            const btnPrem = document.getElementById('tabPrem');
+            if (tab === 'standard') {
+                btnStd.className = 'tab-btn active-standard';
+                btnPrem.className = 'tab-btn';
+            } else {
+                btnStd.className = 'tab-btn';
+                btnPrem.className = 'tab-btn active-premium';
+            }
+        }
+
+        // Smooth scroll cho navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
