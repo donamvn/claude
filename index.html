@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Team - Tâm thư gửi anh em</title>
-    <meta name="description" content="Nhóm chia sẻ Claude Team đã đủ thành viên. Tâm thư gửi anh em đã đồng hành.">
+    <title>Claude Team - Hành trình & Cập nhật</title>
+    <meta name="description" content="Dòng thời gian Claude Team Group: từ ngày thành lập đến những cột mốc mới nhất.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366F1;
-            --secondary: #1F2937;
-            --accent: #F59E0B;
+            --primary-light: #A5B4FC;
+            --vip: #F59E0B;
+            --vip-light: #FCD34D;
             --bg: #0F172A;
             --bg-card: #1E293B;
             --text: #F1F5F9;
@@ -34,9 +35,9 @@
             background-attachment: fixed;
         }
         .container {
-            max-width: 760px;
+            max-width: 880px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
+            padding: 56px 24px 80px;
         }
         .header {
             text-align: center;
@@ -45,13 +46,13 @@
         .badge {
             display: inline-block;
             padding: 8px 18px;
-            background: rgba(245,158,11,0.15);
-            color: var(--accent);
-            border: 1px solid rgba(245,158,11,0.35);
+            background: rgba(99,102,241,0.18);
+            color: var(--primary-light);
+            border: 1px solid rgba(99,102,241,0.4);
             border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             letter-spacing: 0.3px;
         }
         h1 {
@@ -68,50 +69,409 @@
             color: var(--text-muted);
             font-size: 1.05rem;
         }
-        .letter {
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 0 auto 48px;
+            max-width: 720px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg,
+                rgba(99,102,241,0.25) 0%,
+                rgba(99,102,241,0.45) 50%,
+                rgba(245,158,11,0.7) 85%,
+                rgba(245,158,11,0.2) 100%);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 28px;
+            transition: opacity 0.3s;
+        }
+        .timeline-item.past {
+            opacity: 0.5;
+        }
+        .timeline-item.past:hover {
+            opacity: 0.85;
+        }
+        .timeline-item.current {
+            opacity: 1;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 3px solid var(--primary);
+            z-index: 2;
+        }
+        .timeline-item.past .timeline-dot {
+            border-color: rgba(165,180,252,0.5);
+            background: rgba(99,102,241,0.15);
+        }
+        .timeline-item.current .timeline-dot {
+            border-color: var(--vip);
+            background: var(--vip);
+            box-shadow: 0 0 0 6px rgba(245,158,11,0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 6px rgba(245,158,11,0.25); }
+            50% { box-shadow: 0 0 0 12px rgba(245,158,11,0.05); }
+        }
+        .timeline-card {
+            background: rgba(30,41,59,0.65);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            backdrop-filter: blur(8px);
+        }
+        .timeline-item.current .timeline-card {
+            background: linear-gradient(135deg, rgba(245,158,11,0.14), rgba(252,211,77,0.06));
+            border-color: rgba(245,158,11,0.4);
+            box-shadow: 0 8px 32px rgba(245,158,11,0.12);
+        }
+        .timeline-date {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .timeline-item.current .timeline-date {
+            color: var(--vip-light);
+        }
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .timeline-desc {
+            color: rgba(241,245,249,0.78);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+        .timeline-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .timeline-tag.new {
+            background: var(--vip);
+            color: #1F2937;
+        }
+        .timeline-tag.live {
+            background: rgba(34,197,94,0.2);
+            color: #6EE7B7;
+            border: 1px solid rgba(110,231,183,0.4);
+        }
+        /* Progress indicator after the last current item */
+        .timeline-progress {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 8px;
+        }
+        .timeline-progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+        .timeline-progress-fill {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 35%;
+            background: linear-gradient(90deg, var(--vip) 0%, var(--vip-light) 100%);
+            border-radius: 999px;
+            animation: progress 2.5s ease-in-out infinite;
+        }
+        @keyframes progress {
+            0% { width: 25%; opacity: 0.7; }
+            50% { width: 55%; opacity: 1; }
+            100% { width: 25%; opacity: 0.7; }
+        }
+        .timeline-progress-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* ===== TIER COMPARISON ===== */
+        .tier-section {
+            margin: 56px 0 40px;
+        }
+        .tier-section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .tier-section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #F1F5F9, #FCD34D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tier-section-title p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+        .tier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .tier-card {
+            position: relative;
+            border-radius: 18px;
+            padding: 26px 22px;
+            border: 1px solid var(--border);
+            background: rgba(30,41,59,0.65);
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s;
+        }
+        .tier-card:hover { transform: translateY(-3px); }
+        .tier-card.regular {
+            border-color: rgba(99,102,241,0.3);
+        }
+        .tier-card.vip {
+            border: 2px solid var(--vip);
+            background: linear-gradient(135deg, rgba(245,158,11,0.16), rgba(124,58,237,0.12));
+            box-shadow: 0 12px 40px rgba(245,158,11,0.15);
+        }
+        .tier-card.vip::before {
+            content: '👑 NỔI BẬT';
+            position: absolute;
+            top: -12px;
+            right: 18px;
+            background: linear-gradient(135deg, var(--vip), var(--vip-light));
+            color: #1F2937;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+        }
+        .tier-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .tier-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .tier-card.regular .tier-name { color: var(--primary-light); }
+        .tier-card.vip .tier-name { color: var(--vip-light); }
+        .tier-tagline {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+        .tier-features li {
+            font-size: 0.9rem;
+            padding: 6px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            color: rgba(241,245,249,0.88);
+        }
+        .tier-features .check {
+            color: #6EE7B7;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+        .tier-card.vip .tier-features .check { color: var(--vip-light); }
+        .tier-status {
+            margin-top: 14px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .tier-card.regular .tier-status {
+            background: rgba(99,102,241,0.12);
+            color: var(--primary-light);
+        }
+        .tier-card.vip .tier-status {
+            background: rgba(245,158,11,0.18);
+            color: var(--vip-light);
+        }
+
+        /* ===== JOIN INFO ===== */
+        .join-info {
+            margin: 40px 0 8px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.14), rgba(124,58,237,0.10));
+            border: 1px solid rgba(99,102,241,0.35);
+            border-radius: 16px;
+            padding: 22px 24px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .join-info .ji-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .join-info h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 6px;
+        }
+        .join-info p {
+            font-size: 0.93rem;
+            color: rgba(241,245,249,0.85);
+            line-height: 1.6;
+        }
+
+        /* ===== LEGAL ===== */
+        .legal-section {
+            margin: 48px 0 32px;
+        }
+        .legal-section-title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .legal-section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .legal-section-title p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+        .legal-card {
+            background: linear-gradient(135deg, rgba(6,78,59,0.55), rgba(6,95,70,0.45));
+            border: 1px solid rgba(110,231,183,0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 18px;
+        }
+        .legal-card .lc-head {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .legal-card .lc-icon { font-size: 1.6rem; }
+        .legal-card h3 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #6EE7B7;
+        }
+        .legal-card p {
+            font-size: 0.93rem;
+            color: rgba(241,245,249,0.88);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+        .legal-card p:last-child { margin-bottom: 0; }
+        .legal-card .quote {
+            background: rgba(0,0,0,0.25);
+            border-left: 3px solid #FCA5A5;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: rgba(241,245,249,0.75);
+            margin: 10px 0;
+        }
+        .legal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .legal-grid .lg-box {
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 0.85rem;
+        }
+        .legal-grid .lg-box.ok {
+            background: rgba(16,185,129,0.18);
+            border: 1px solid rgba(110,231,183,0.3);
+        }
+        .legal-grid .lg-box.bad {
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(252,165,165,0.3);
+        }
+        .legal-grid .lg-box strong { display: block; margin-bottom: 6px; font-size: 0.88rem; }
+        .legal-grid ul { padding-left: 16px; opacity: 0.9; line-height: 1.6; }
+        .legal-grid ul li { font-size: 0.8rem; }
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .rule-item {
             background: rgba(30,41,59,0.7);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px 36px;
-            backdrop-filter: blur(12px);
-            margin-bottom: 32px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--primary);
+            border-radius: 14px;
+            padding: 24px 26px;
         }
-        .letter p {
-            margin-bottom: 18px;
-            color: rgba(241,245,249,0.92);
+        .rule-item.warn { border-left-color: #F59E0B; }
+        .rule-item.danger { border-left-color: #EF4444; }
+        .rule-item.success { border-left-color: #10B981; }
+        .rule-item h4 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            color: var(--text);
+            line-height: 1.35;
+        }
+        .rule-item p, .rule-item ul {
             font-size: 1.02rem;
+            color: rgba(241,245,249,0.92);
+            line-height: 1.7;
         }
-        .letter p:last-child { margin-bottom: 0; }
-        .letter strong { color: #C7D2FE; }
-        .letter .highlight {
-            background: rgba(99,102,241,0.12);
-            border-left: 3px solid var(--primary);
-            padding: 14px 18px;
-            border-radius: 8px;
-            margin: 22px 0;
+        .rule-item ul { padding-left: 20px; margin-top: 8px; }
+        .rule-item ul li { margin-bottom: 4px; }
+        .rule-item a { color: var(--primary-light); font-weight: 600; }
+        @media (max-width: 640px) {
+            .rules-grid { grid-template-columns: 1fr; }
+            .rule-item { padding: 20px; }
+            .rule-item h4 { font-size: 1.08rem; }
+            .rule-item p, .rule-item ul { font-size: 0.95rem; }
         }
-        .signoff {
-            text-align: right;
-            margin-top: 28px;
-            padding-top: 24px;
-            border-top: 1px dashed rgba(255,255,255,0.12);
-        }
-        .signoff em {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        .signoff .name {
-            display: block;
-            color: #FCD34D;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 4px;
-            font-style: normal;
-        }
+
+        /* ===== CONTACT ===== */
         .contact-section {
             text-align: center;
-            margin-top: 16px;
+            margin-top: 40px;
         }
         .contact-title {
             color: var(--text-muted);
@@ -164,10 +524,14 @@
             font-size: 0.85rem;
             opacity: 0.7;
         }
-        @media (max-width: 600px) {
-            .container { padding: 40px 18px 60px; }
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px 60px; }
             h1 { font-size: 1.7rem; }
-            .letter { padding: 28px 22px; }
+            .timeline-item { padding-left: 56px; }
+            .timeline::before { left: 18px; }
+            .timeline-dot { left: 8px; }
+            .timeline-progress { padding-left: 56px; }
+            .tier-grid { grid-template-columns: 1fr; }
             .contact-btn { padding: 12px 20px; font-size: 0.95rem; }
         }
     </style>
@@ -175,59 +539,224 @@
 <body>
     <div class="container">
         <div class="header">
-            <span class="badge">📮 Tâm thư gửi anh em</span>
-            <h1>Cảm ơn anh em đã đồng hành cùng Claude Team</h1>
-            <p class="subtitle">Một vài dòng chia sẻ thật lòng từ admin nhóm</p>
+            <span class="badge">📍 Hành trình Claude Team</span>
+            <h1>Dòng thời gian &amp; Cập nhật mới</h1>
+            <p class="subtitle">Những cột mốc đã qua và kế hoạch sắp tới của nhóm</p>
         </div>
 
-        <div class="letter">
-            <p>Chào anh em,</p>
+        <!-- ===== TIMELINE ===== -->
+        <div class="timeline">
 
-            <p>
-                Trước hết, mình xin gửi lời <strong>cảm ơn chân thành</strong> đến tất cả anh em đã tin tưởng,
-                đồng hành và cùng chia sẻ gói Claude Team trong suốt thời gian qua. Nhóm đã đi cùng nhau qua
-                nhiều tháng và hiện tại đã <strong>đủ số lượng thành viên</strong> để duy trì ổn định.
-            </p>
+            <!-- Past milestone 1 -->
+            <div class="timeline-item past">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Tháng 2/2026</div>
+                    <div class="timeline-title">🌱 Team được thành lập</div>
+                    <div class="timeline-desc">Khởi tạo nhóm chia sẻ Claude Team chính chủ từ Anthropic, đặt nền móng cho hành trình.</div>
+                </div>
+            </div>
 
-            <div class="highlight">
-                <p style="margin-bottom: 0;">
-                    Vì vậy, <strong>nhóm tạm thời ngưng nhận thêm thành viên mới</strong> để đảm bảo trải nghiệm
-                    tốt nhất cho những anh em đang sử dụng.
+            <!-- Past milestone 2 -->
+            <div class="timeline-item past">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Tháng 3/2026</div>
+                    <div class="timeline-title">📈 Bắt đầu tăng số lượng thành viên</div>
+                    <div class="timeline-desc">Cộng đồng phát triển nhanh, nhóm mở rộng quy mô và ổn định quy trình hỗ trợ – gia hạn.</div>
+                </div>
+            </div>
+
+            <!-- Past milestone 3 -->
+            <div class="timeline-item past">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Tháng 5/2026</div>
+                    <div class="timeline-title">💎 Ra mắt gói Team VIP Premium</div>
+                    <div class="timeline-desc">Bổ sung tier VIP Premium với custom domain, gia hạn theo năm và độ ổn định tối đa.</div>
+                </div>
+            </div>
+
+            <!-- Past milestone 4 -->
+            <div class="timeline-item past">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Hôm trước</div>
+                    <div class="timeline-title">🎯 Đủ số lượng thành viên dự kiến</div>
+                    <div class="timeline-desc">Nhóm chạm mốc dự kiến — tạm đóng nhận thêm để bảo vệ quota & trải nghiệm anh em đang dùng.</div>
+                </div>
+            </div>
+
+            <!-- Current milestone -->
+            <div class="timeline-item current">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Hôm nay <span class="timeline-tag live">● ĐANG DIỄN RA</span></div>
+                    <div class="timeline-title">🚀 Mở thêm team mới &amp; chuẩn bị Team VIP Standard <span class="timeline-tag new">MỚI</span></div>
+                    <div class="timeline-desc">
+                        <strong>Ngày 5/6:</strong> mở thêm team mới để đón thêm anh em vào nhóm.<br>
+                        <strong>Mùng 10:</strong> dự kiến ra mắt <strong>gói Team VIP Standard</strong> — giá sẽ được thông báo trong nhóm Zalo.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress bar tiếp tục -->
+            <div class="timeline-progress">
+                <div class="timeline-progress-bar">
+                    <div class="timeline-progress-fill"></div>
+                </div>
+                <div class="timeline-progress-label">… hành trình vẫn đang tiếp tục</div>
+            </div>
+
+        </div>
+
+        <!-- ===== TIER COMPARISON ===== -->
+        <div class="tier-section">
+            <div class="tier-section-title">
+                <h2>So sánh nổi bật: Gói thường vs Gói VIP</h2>
+                <p>Hai hướng lựa chọn cho thành viên — phù hợp với nhu cầu khác nhau</p>
+            </div>
+
+            <div class="tier-grid">
+                <!-- Gói thường -->
+                <div class="tier-card regular">
+                    <div class="tier-icon">⚡</div>
+                    <div class="tier-name">Gói thường</div>
+                    <div class="tier-tagline">Standard &amp; Premium tiêu chuẩn</div>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> <span>Quota Standard 1.25x / Premium 6.25x so với Pro</span></li>
+                        <li><span class="check">✓</span> <span>Mời vào team bằng <strong>Gmail cá nhân</strong></span></li>
+                        <li><span class="check">✓</span> <span>Gia hạn theo tháng (mùng 1 & ngày 15)</span></li>
+                        <li><span class="check">✓</span> <span>Hỗ trợ cộng đồng Zalo</span></li>
+                    </ul>
+                    <div class="tier-status">Đã đủ số lượng — chờ đợt mở thêm 5/6</div>
+                </div>
+
+                <!-- Gói VIP -->
+                <div class="tier-card vip">
+                    <div class="tier-icon">👑</div>
+                    <div class="tier-name">Gói VIP</div>
+                    <div class="tier-tagline">VIP Standard (sắp ra mắt) &amp; VIP Premium</div>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> <span><strong>Custom domain</strong> riêng — không bị giới hạn Gmail</span></li>
+                        <li><span class="check">✓</span> <span>Hỗ trợ <strong>gia hạn theo năm</strong>, miễn phí $10 duy trì team</span></li>
+                        <li><span class="check">✓</span> <span><strong>Độ ổn định tối đa</strong> — rủi ro đổi team gần như bằng 0</span></li>
+                        <li><span class="check">✓</span> <span>Hỗ trợ ưu tiên trực tiếp từ admin</span></li>
+                    </ul>
+                    <div class="tier-status">VIP Standard ra mắt mùng 10 · giá thông báo trong nhóm Zalo</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== JOIN INFO ===== -->
+        <div class="join-info">
+            <div class="ji-icon">⏳</div>
+            <div>
+                <h3>Thời gian xếp team sau khi đăng ký</h3>
+                <p>
+                    Sau khi anh em đăng ký, <strong>khoảng 5 ngày</strong> sẽ có một team sẵn để lựa chọn. Mình cần thời gian để
+                    sắp xếp slot phù hợp, đảm bảo độ ổn định và quota cho cả team — không nhồi vội, không ảnh hưởng anh em đang dùng.
                 </p>
             </div>
+        </div>
 
-            <p>
-                Mình muốn làm điều này một cách <strong>đàng hoàng và có trách nhiệm</strong> — không lạm dụng
-                chính sách của Anthropic để nhồi nhét thêm thành viên, vì điều đó sẽ ảnh hưởng trực tiếp đến
-                quota, độ ổn định và quyền lợi của anh em đang dùng. Cái gì đi đường dài thì phải làm tử tế.
-            </p>
+        <!-- ===== LEGAL & POLICY ===== -->
+        <div class="legal-section">
+            <div class="legal-section-title">
+                <h2>⚖️ Tính pháp lý &amp; Chính sách</h2>
+                <p>Những điều anh em cần biết — đã áp dụng từ những đợt trước</p>
+            </div>
 
-            <p>
-                Bên cạnh đó, <strong>giá từ phía nhà cung cấp đang tăng dần</strong> theo từng đợt (thuế, phí
-                quy đổi ngoại tệ, chính sách điều chỉnh từ Anthropic…). Việc giữ nguyên quy mô hiện tại giúp
-                mình kiểm soát được chi phí và không phải đẩy gánh nặng đó lên anh em.
-            </p>
+            <!-- Legal notice -->
+            <div class="legal-card">
+                <div class="lc-head">
+                    <span class="lc-icon">⚖️</span>
+                    <h3>Về tính pháp lý của nhóm chia sẻ</h3>
+                </div>
+                <p>
+                    <strong>Claude Team</strong> là gói dịch vụ chính thức của Anthropic được <strong>thiết kế dành cho nhóm/tổ chức</strong>.
+                    Admin có quyền mời thành viên tham gia Team — đây là tính năng chính thức, không phải "chia sẻ tài khoản"
+                    hay "kinh doanh tài khoản".
+                </p>
+                <div class="quote">
+                    📋 Dự thảo Nghị định mới (dự kiến 1/7/2026): "Phạt 25–50 triệu đồng với hành vi <u>kinh doanh</u> tài khoản
+                    dùng chung <u>trái quy định của nhà cung cấp</u>."
+                </div>
+                <div class="legal-grid">
+                    <div class="lg-box ok">
+                        <strong>✅ Nhóm này KHÔNG vi phạm vì:</strong>
+                        <ul>
+                            <li>Gói Team cho phép mời thành viên</li>
+                            <li>Mua chính chủ từ Anthropic, có hóa đơn</li>
+                            <li>Chia sẻ chi phí, không kinh doanh</li>
+                            <li>Tuân thủ TOS của nhà cung cấp</li>
+                        </ul>
+                    </div>
+                    <div class="lg-box bad">
+                        <strong>❌ Vi phạm nếu:</strong>
+                        <ul>
+                            <li>Bán account / password</li>
+                            <li>Chia sẻ trái quy định TOS</li>
+                            <li>Kinh doanh mục đích lợi nhuận</li>
+                            <li>Không có hóa đơn chính chủ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <p>
-                Nếu anh em là <strong>thành viên hiện tại</strong>, mình vẫn duy trì hỗ trợ gia hạn và giải đáp
-                thắc mắc bình thường. Nếu anh em <strong>mới biết đến nhóm</strong>, rất xin lỗi vì không thể
-                nhận thêm ở thời điểm này — anh em có thể follow Facebook hoặc join nhóm Zalo bên dưới để
-                cập nhật khi có đợt mở lại.
-            </p>
+            <!-- Policy rules grid -->
+            <div class="rules-grid">
+                <div class="rule-item danger">
+                    <h4>🚫 Không hoàn tiền</h4>
+                    <p>
+                        Theo chính sách của Anthropic, <strong>không hỗ trợ hoàn tiền</strong> sau khi đã thanh toán và kích hoạt dịch vụ.
+                    </p>
+                    <p style="font-style:italic; opacity:0.75; margin-top:8px; font-size:0.92rem;">
+                        "… fees are non-refundable except as required by law."
+                    </p>
+                    <p style="margin-top:6px;"><a href="https://www.anthropic.com/legal/consumer-terms" target="_blank">→ Anthropic Consumer Terms</a></p>
+                </div>
 
-            <p>
-                Một lần nữa, cảm ơn tất cả anh em rất nhiều. Chúc anh em luôn dùng Claude hiệu quả và gặt hái
-                được nhiều thành quả trong công việc, học tập!
-            </p>
+                <div class="rule-item success">
+                    <h4>✅ Tuân thủ điều khoản Anthropic</h4>
+                    <p>Gói Team chính chủ có hóa đơn. Thành viên cam kết:</p>
+                    <ul>
+                        <li>Sử dụng đúng mục đích cá nhân/công việc</li>
+                        <li>Không vi phạm <a href="https://www.anthropic.com/legal/aup" target="_blank">Acceptable Use Policy</a></li>
+                        <li>Không chia sẻ thông tin đăng nhập ra ngoài</li>
+                    </ul>
+                </div>
 
-            <div class="signoff">
-                <em>Thân mến,</em>
-                <span class="name">— Đỗ Hoài Nam</span>
+                <div class="rule-item warn">
+                    <h4>🚨 Cảnh báo vi phạm</h4>
+                    <p><strong>NGHIÊM CẤM</strong> dùng dịch vụ cho:</p>
+                    <ul>
+                        <li>API không chính thức (OpenClaw…)</li>
+                        <li>Tạo nội dung vi phạm pháp luật</li>
+                        <li>Spam, lừa đảo, phát tán mã độc</li>
+                        <li>Vi phạm TOS Anthropic</li>
+                    </ul>
+                    <p style="margin-top:12px; color:#FCA5A5; font-size:0.95rem; font-weight:600;">
+                        ⚠️ Vi phạm của 1 thành viên có thể ảnh hưởng <strong>toàn bộ team</strong> — sẽ bị remove khỏi team mà không hoàn tiền.
+                    </p>
+                </div>
+
+                <div class="rule-item">
+                    <h4>📊 Vì sao nhóm ổn định lâu dài</h4>
+                    <ul>
+                        <li>Gói chính chủ có hóa đơn từ Anthropic</li>
+                        <li>Tuân thủ đầy đủ TOS &amp; Usage Policy</li>
+                        <li>Sàng lọc thành viên kỹ càng</li>
+                        <li>Là nhóm chia sẻ, không kinh doanh</li>
+                    </ul>
+                    <p style="margin-top:12px; color:#93C5FD; font-size:0.98rem; font-weight:600;">📝 Sử dụng đúng mục đích = yên tâm dùng lâu dài.</p>
+                </div>
             </div>
         </div>
 
+        <!-- ===== CONTACT ===== -->
         <div class="contact-section">
-            <p class="contact-title">📬 Liên hệ &amp; cập nhật thông tin</p>
+            <p class="contact-title">📬 Theo dõi cập nhật &amp; liên hệ</p>
             <div class="contact-buttons">
                 <a href="https://www.facebook.com/donamthuongtin/" target="_blank" rel="noopener" class="contact-btn fb">
                     <span class="icon">f</span>
